@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunger No Longer: Create A Post</title>
+    <link rel="stylesheet" type="text/css" href="/Forum/css/createAPost.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <!--********* NAV BAR START ***********-->
+    <div id="outerContainer" class="closebtn" onclick="closeNav()">
+        <div id="mySidenavContainer" class="sidenav">
+            <div id="profileBackground">
+                <div id="profile">
+                    <div></div>
+                    <div id="profilePicContainer">
+                        <img id="profilePic" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ece92f41f4c83000768d787%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D421%26cropX2%3D1694%26cropY1%3D37%26cropY2%3D1310" width="100px" height="100px">
+                    </div>
+                    <div id="profileName">
+                        <p><b>Damian Lillard</b></p>
+                    </div>
+                    <div id="profileEmail">
+                        <p>damian_lillard@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mySidenavContents">
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>Place Order</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
+                <a href="Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a>
+            </div>
+        </div>      
+        <!--********* NAV BAR END ***********-->
+
+        <div id="InnerContainer">
+                <div id="headingContainer">
+                    <div id="hamburgerMenu">
+                        <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
+                    </div>
+                    <div id="title">
+                        <span id="title-font">CREATE A POST</span>
+                    </div>
+                    <div id="cameraButtonContainer">
+                        <div id="cameraButton">
+                            <img id="actualCameraButton" src="https://img.icons8.com/officexs/38/000000/add-camera.png">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST CONTAINER (POSTS to Database)-->
+                <div id="postContainer">
+                    <div id="feed">    
+                        <form>
+                            <input type="text" id="titleBox" name="search" placeholder="Enter Title...">
+                        </form>           
+                    </div>
+                    <div id="feed"> 
+                        <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
+                        <textarea name="the-textarea" id="textBody" maxlength="500" placeholder="Enter Text..."autofocus></textarea>
+                        <div id="the-count">
+                          <span id="current">0</span>
+                          <span id="maximum">/ 500</span>
+                        </div>
+                    </div>
+                    <div id="feed">
+                        <form>
+                        <input type="text" id="tagBox" name="search" placeholder="Enter Tag...">
+                        </form>
+                    </div>
+                </div>
+                <div id="adSpaceContainer"></div>
+                <div id="lowerNavContainer">
+                    <div id="postButton" data-toggle="modal" data-target="#myModal">
+                        <span id="postButtonFont">SUBMIT</span>
+                    </div>
+                </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content" keyboard="true">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Submitting Your Post?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Please review your post before submitting to Social Hub.<br><br>You can edit it if you need to change something.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" id="editButton" data-dismiss="modal">Edit</button>
+                                <button type="button" class="btn btn-default" id="submitButton"><a href="Forum.html" style="color: white;">Submit</a></button></a>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Script file here to allow DOM elements to LOAD first!!!! -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/slidingNav.js"></script> 
+<script src="js/createAPostText.js"></script> 
