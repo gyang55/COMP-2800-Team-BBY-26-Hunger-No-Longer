@@ -1,0 +1,118 @@
+/* The banner*/
+
+.banner {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.bannertext {
+    font-family: 'Coda Caption', sans-serif;
+    display: inline-block;
+    position: absolute;
+    margin-left: 5px;
+    bottom: 10px;
+    color: black;
+    font-weight: 800;
+}
+
+
+/*news card*/
+
+.newsContainer {
+    width: 100%;
+    height: 80vh;
+    resize: vertical;
+    background-color: antiquewhite;
+    margin-top: 170px;
+    padding-left: 5px;
+}
+
+.news {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0 10px 0;
+    overflow: auto;
+}
+
+.pic {
+    width: 30%;
+    height: 100%;
+    float: left;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../img/banner.jpg);
+}
+
+h4 {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.content {
+    width: 68%;
+    height: 100%;
+    float: left;
+    margin-left: 5px;
+    overflow: auto;
+}
+
+.newsbody {
+    font-size: 0.5em;
+    height: 50%;
+}
+
+.date {
+    display: inline-block;
+    font-size: 0.2em;
+}
+
+
+/*Read More css*/
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+}
+
+.read-more-wrap {
+    margin-bottom: 0;
+}
+
+.read-more-state:checked~.read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state~.read-more-trigger:before {
+    content: 'Read more';
+}
+
+.read-more-state:checked~.read-more-trigger:before {
+    content: 'Read less';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px;
+    color: #666;
+    font-size: 0.5em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: .25em;
+}
