@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ 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 }}'
+          repoToken: '${{ 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 }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HUNGER_NO_LONGER }}'
           channelId: live
           projectId: hunger-no-longer
