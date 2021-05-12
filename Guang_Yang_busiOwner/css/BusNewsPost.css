@@ -1,0 +1,69 @@
+/* Post container*/
+
+.newsPostContainer {
+    margin-top: 70px;
+    padding-top: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+
+/*Page title*/
+
+.title {
+    text-align: center;
+}
+
+
+/* Food list bar*/
+
+.foodlist {
+    width: 100%;
+    height: 5vh;
+    margin-top: 10px;
+    padding-left: 20px;
+    text-align: start;
+}
+
+h4 {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.camera {
+    margin-left: 215px;
+}
+
+
+/*Food input form*/
+
+.foodInputForm {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: large;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.btn {
+    width: 30px;
+    padding: 0;
+    vertical-align: baseline
+}
+
+input {
+    width: 180px;
+}
+
+.foodname {
+    margin-left: 20px;
+}
+
+.inputDate {
+    width: 180px;
+}
