@@ -70,13 +70,13 @@ body {
 }
 
 #profileName {
-    margin-top: -5px;
+    margin-top: 8px;
     color: white;
 }
 
 #profileEmail {
     color: white;
-    margin-top: -30px;
+    margin-top: -17px;
     font-size: 12pt;
 }
 
@@ -106,10 +106,6 @@ body {
 }
 /******************END OF NAV BAR CODE************************/
 
-#outerContainer {
-    margin: -10px;
-}
-
 #InnerContainer {
     display: grid;
     grid-template-rows: auto auto auto auto;
@@ -118,15 +114,14 @@ body {
 #headingContainer {
     display: grid;
     grid-template-columns: auto auto 60px;
-    height: 71px;
+    height: 70px;
     border-bottom: 0.5px black solid;
 }
 
 #hamburgerMenu {
     column-width: 60px;
     background-color: rgb(175, 175, 175);
-    padding-top: 12px;
-    padding-left: 2px;
+    padding-top: 10px;
     cursor: pointer; 
 }
 
@@ -136,14 +131,12 @@ body {
 
 #menuIcon { 
     padding-right: 30px;
-    padding-top: 50px;
-    margin-top: -35px;
+    margin-top: -7px;
 }
 
 #title {
     display: block;
-    padding-top: 20px;
-    padding-right: 2px;
+    padding-top: 15px;
     text-align: center;
     column-width: 2000px;
     margin-left: auto;
@@ -164,8 +157,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
-    padding-right: 2px;
+    margin-top: 13px;
+    padding-left: 1px;
 }
 
 #actualHomeButton:hover {
@@ -173,15 +166,14 @@ body {
 }
 
 /* Used hiding scroll: https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-#feedContainer {
+#postContainer {
     display: grid;
     border-bottom: 0.5px black solid;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     color: rgb(75, 75, 75);
-    row-gap: 5px;
-    height: 600px; 
+    height: 650px; 
     overflow: auto;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -189,29 +181,26 @@ body {
 }
 
 /* Used hiding scroll: https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-#feedContainer::-webkit-scrollbar {
+#postContainer::-webkit-scrollbar {
     display: none;
 }
 
-#feed {
+#post {
     display: grid;
-    grid-template-rows: 30px 100px 35px; /*REVISE?*/
+    grid-template-rows: 30px auto auto 35px; /*REVISE?*/
     border: 1px solid rgb(107, 107, 107);
+    /*ADD SOMETHING HERE? (Height auto?): 
+    Objective: To let the size of post overflow, but keep post box same?*/
 }
 
 #dateAndUserContainer {
     display: grid;
     grid-template-columns: 130px auto auto;
+    margin-top: 12px;
 }
 
 #userNamePosted {
-    padding-left: 10px;
-
-}
-
-#pictureTitleTextContainer {
-    display: grid;
-    grid-template-columns: 0px 100px auto;
+    padding-left: 9px;
 }
 
 #picture > img {
@@ -219,42 +208,20 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
-
 }
 
-#titleAndTextContainer {
-    display: grid;
-    grid-template-rows: 32px 50px;
-}
-
-#feedTitle {
-    font-size: 15px; /*EDIT THIS FOR adaptive resolution*/
+#postTitle {
+    font-size: 20px; /*EDIT THIS FOR adaptive resolution*/
     font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: 900;
     color: black;
+    font-weight: 900;
+    padding-left: 10px;
+    margin-top: 5px;
 }
 
-#feedTitle > p {
-    width: 100%;
-    text-overflow: ellipsis; /*CODE TO KEEP FONTS ALL IN ONE LINE: NO BREAKING*/
-    overflow: hidden; /*CODE TO KEEP FONTS ALL IN ONE LINE: NO BREAKING*/
-    white-space: pre;/*CODE TO KEEP FONTS ALL IN ONE LINE: NO BREAKING*/
-    margin-top: 7px;
-}
-
-#textBody {
-    overflow: auto;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-}
-
-#textBody::-webkit-scrollbar {
-    display: none;
-}
-
-#textBody > p {
-    margin-top: -2px;
+#postBody {
+    padding-left: 10px;
+    margin-top: -10px;
 }
 
 #like-LoveContainer {
@@ -277,17 +244,71 @@ body {
     padding-left: 10px;
 }
 
-#adSpaceContainer{
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    padding-top: 20px;
-    height: 35px;
-    background-color:rgb(12, 250, 179);
+/************COMMENT STYLING**************/
+#comment {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    border: 1px solid rgb(107, 107, 107);
 }
 
+#commentTextContainer {
+    padding-left: 50px;
+    margin-top: -12px;
+}
+
+#dateAndUserContainer2 {
+    display: grid;
+    grid-template-columns: 40px 130px auto auto;
+    margin-top: 12px;
+}
+
+#like-replyContainer {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    height: 50px;
+}
+
+#smile2 {
+    padding-top: 13px;
+    padding-left: 10px;
+}
+
+#notSmile2 {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#replyButton {
+    text-align: center;
+    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgb(121, 121, 121) , rgb(105, 105, 105));
+    padding-top: 5px;
+    margin-top: 13px;
+    border-radius: 10px 10px 10px 10px; 
+    height: 25px;
+    color: rgb(54, 54, 54);
+}
+
+#userCommentPic {
+    padding-left: 10px;
+}
+
+#userCommentPic > img {
+    border-radius: 100%;
+}
+
+#userNamePosted2 {
+    padding-left: 10px;
+    color: black;
+}
+
+#datePosted2 {
+    color: black;
+}
+/************END OF COMMENT STYLING************/
+
 #lowerNavContainer{
-    height: 55px;
+    height: 100px;
     padding-top: 40px;
     background-color: rgb(175, 175, 175);
 }
@@ -302,7 +323,7 @@ body {
     background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
     margin-top: -20px;
     padding-top: 16px;
-    height: 35px;
+    height: 55px;
     border-radius: 20px 20px 20px 20px; 
     width: 50%;
 }
@@ -326,3 +347,76 @@ body {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/************ MODAL STYLING ***********/
+.modal-content {
+    height: 325px;
+    margin-top: 100px;
+}
+.modal-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#editButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
+    padding-top: 8px;
+    height: 55px;
+    border-radius: 20px 20px 20px 20px; 
+    width: 35%;
+    color: white;
+}
+
+#editButton:hover {
+    color:white;
+    cursor: pointer; 
+    text-decoration: underline;
+    /* NOTE: Text shadow edits from left to right: xyz directions */
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(78, 161, 255), 0 0 50px darkgoldenrod;
+}
+
+#editButtonFont {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#submitButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(48, 216, 132); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgb(0, 250, 125) , rgb(43, 197, 125));
+    padding-top: 8px;
+    height: 55px;
+    border-radius: 20px 20px 20px 20px; 
+    width: 35%;
+    color: white;
+}
+
+#submitButton > a:link {
+    color: white;
+}
+
+/********TEXT AREA BOOTSTRAP STYLING*******/
+#textBody {
+    width: 100%;
+    min-height: 110px;
+    resize: none;
+    color: #666;
+    font-size: 12pt;
+    border: none;
+  
+  }
+  
+  #the-count {
+    float: right;
+    padding: 0.1rem 0 0 0;
+    font-size: 0.875rem;
+  }
