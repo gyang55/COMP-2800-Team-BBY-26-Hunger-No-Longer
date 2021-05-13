@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunger No Longer</title>
 
-
+    <!--Favicon-->
+    <link rel="icon" type='image/png' href="../img/favicon-32x32.png">
 
     <!--FontAwesome css-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -21,6 +22,27 @@
 
 <body>
     <!--Modal starts-->
+    <div class="popup" id="popup-container">
+        <span class="tri"></span>
+        <div id="close-btn-container">
+            <span id="close-btn">Close</span>
+
+        </div>
+
+        <div class="content">
+            <h5><a href="#" id="snap">Take a photo</a></h5>
+        </div>
+        <div class="content">
+            <h5 id="choose">
+                Choose from your phone
+            </h5>
+            <input type='file' name="img" accept="image/*" id="imgUpload"></input>
+            <input type="submit" id="submit">
+        </div>
+
+
+    </div>
+
     <!--Modal ends-->
     <!--********* NAV BAR START ***********-->
     <div id="outerContainer" class="closebtn" onclick="closeNav()">
@@ -53,7 +75,8 @@
         <!--********* NAV BAR END ***********-->
 
         <div id="InnerContainer">
-
+            <video id="video" autoplay></video>
+            <button id="shoot">Shoot</button>
             <div id="headingContainer" class="fixed-top">
                 <div id="hamburgerMenu">
                     <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
@@ -75,25 +98,32 @@
                     <h3>Post your leftover food</h3>
                 </div>
                 <div class="foodlist">
-                    <h4>Food List </h4><i class="fas fa-plus-circle" id="plus"></i><i class="fas fa-camera camera"></i>
+                    <h4>Food List </h4><i class="fas fa-plus-circle" id="plus">
+                    </i>
+                    <canvas id="canvas"></canvas>
+                    <a href="#" id="modalShow">
+                        <i class="fas fa-camera camera"></i>
+                    </a>
                 </div>
                 <div class="foodInput">
                     <form class="foodInputForm">
 
                         <h4>Food name </h4><input type="text" class="foodname">
 
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                         
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item pizza" href="#">Pizza</a></li>
-                            <li><a class="dropdown-item FriedChiken" href="#">Fried Chiken</a></li>
-                            <li><a class="dropdown-item Hambuger" href="#">Hambuger</a></li>
-                            <li><a class="dropdown-item Fries" href="#">Fries</a></li>
+                        <botton class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        </botton>
+                        <ul class="dropdown-menu ddm" aria-labelledby="dropdownMenuButton1" id="ddm">
+                            <li><a class="dropdown-item pizza" value='Pizza' href="#">Pizza</a></li>
+                            <li><a class="dropdown-item FriedChiken" value='Fried Chiken' href="#">Fried Chiken</a></li>
+                            <li><a class="dropdown-item Hambuger" value='Hambuger' href="#">Hambuger</a></li>
+                            <li><a class="dropdown-item Fries" value='Fries' href="#">Fries</a></li>
                         </ul>
                         <h4>Best use date</h4><input type="date" class="inputDate">
                     </form>
                 </div>
+
+
             </div>
             <!--News post ends-->
 
