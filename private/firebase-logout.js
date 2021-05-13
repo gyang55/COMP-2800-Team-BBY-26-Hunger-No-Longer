@@ -1,6 +1,5 @@
 'use strict'
-
-const logout = document.querySelector('#logout');
+//const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().signOut().then (function () {
