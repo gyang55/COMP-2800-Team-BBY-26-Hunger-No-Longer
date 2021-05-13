@@ -83,9 +83,16 @@ body {
 #mySidenavContents {
     background-color: white;
     text-overflow: ellipsis; /*CODE TO KEEP FONTS ALL IN ONE LINE: NO BREAKING*/
-    overflow: hidden; /*CODE TO KEEP FONTS ALL IN ONE LINE: NO BREAKING*/
     white-space: pre;
     padding: 0px;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Used hiding scroll: https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+#mySidenavContents::-webkit-scrollbar {
+    display: none;
 }
 
 #main {
@@ -123,6 +130,11 @@ body {
 }
 
 #menuIcon { 
+    padding-right: 30px;
+    margin-top: -7px;
+}
+
+#logOutIcon { 
     padding-right: 30px;
     margin-top: -7px;
 }
