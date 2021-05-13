@@ -142,6 +142,12 @@ body {
     margin-top: -35px;
 }
 
+#logOutIcon { 
+    padding-right: 30px;
+    padding-top: 50px;
+    margin-top: -35px;
+}
+
 #title {
     display: block;
     padding-top: 20px;

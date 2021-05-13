@@ -36,6 +36,7 @@
                 <a href="Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a>
                 <a href="/aboutUs.html"><img id="menuIcon" src="https://img.icons8.com/doodle/27/000000/employee-card--v1.png"/><b>About Us</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/help.png"/><b>Help</b></a>
+                <a href="#" id="logout"><img id="logOutIcon" src="https://img.icons8.com/plasticine/30/000000/export.png"/><b>Log Out</b></a>
             </div>
         </div>      
         <!--********* NAV BAR END ***********-->
@@ -58,22 +59,29 @@
                 <!-- POST CONTAINER (POSTS to Database)-->
                 <div id="postContainer">
                     <div id="feed">    
-                        <form>
+
+                        <form id="inputTitleForm">
                             <input type="text" id="titleBox" name="search" placeholder="Enter Title...">
                         </form>           
+
                     </div>
                     <div id="feed"> 
                         <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
+                        <form id="inputBodyTextForm">
                         <textarea name="the-textarea" id="textBody" maxlength="500" placeholder="Enter Text..."autofocus></textarea>
+                        </form>
+
                         <div id="the-count">
                           <span id="current">0</span>
                           <span id="maximum">/ 500</span>
                         </div>
                     </div>
                     <div id="feed">
-                        <form>
+
+                        <form id="inputTagForm">
                         <input type="text" id="tagBox" name="search" placeholder="Enter Tag...">
                         </form>
+
                     </div>
                 </div>
                 <div id="adSpaceContainer"></div>
@@ -114,6 +122,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="js/slidingNav.js"></script> 
 <script src="js/createAPostText.js"></script> 
+<script src="js/postInput.js"></script> 
+<script src="/private/firebase-logout.js"></script>
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
