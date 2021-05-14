@@ -41,7 +41,7 @@ map.on('load', function() {
         mapboxgl: mapboxgl, // Set the mapbox-gl instance
         zoom: 13, // Set the zoom level for geocoding results
         placeholder: "Enter an address or place name", // This placeholder text will display in the search bar
-        bbox: [-105.116, 39.679, -104.898, 39.837] // Set a bounding box
+        bbox: [-123.39206, 49.27801] // Set a bounding box
 
     });
     // Add the geocoder to the map
