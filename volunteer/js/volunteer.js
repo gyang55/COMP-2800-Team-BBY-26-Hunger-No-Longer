@@ -17,19 +17,15 @@ $(document).ready(function () {
 
 /**
  * 
- * @param {*} address 
- * @param {*} city 
- * @param {*} prov 
- * @param {*} number 
  */
 
 /**
  * Updates user to assume role of Volunteer.
  * 
- * @param address 
- * @param city 
- * @param prov 
- * @param number 
+ * @param address address of volunteer
+ * @param city city of volunteer
+ * @param prov prov of volunteer
+ * @param number phone number of volunteer
  */
  function updateVolunteer(address,city,prov,number) {
     var updateVolunteer = db.collection("volunteer");
