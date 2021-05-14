@@ -144,7 +144,14 @@ input {
 }
 
 #submit {
+    margin-top: 5px;
     width: 60px;
+}
+
+.form-control-sm {
+    margin: auto;
+    width: 200px;
+    ;
 }
 
 
