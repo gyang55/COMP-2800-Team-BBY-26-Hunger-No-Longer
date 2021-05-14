@@ -67,7 +67,8 @@ $(document).ready(function() {
         context.drawImage(video, 0, 0, 320, 100);
 
         // Get image URL in base64 encoded string.
-        const dataURl = canvas.toDataURL('image/jpeg');
+        const dataURl = canvas[0].toDataURL('image/jpeg');
+        console.log(dataURl);
 
         // Ajax call to send the URL to back end.
     })
@@ -82,7 +83,6 @@ $(document).ready(function() {
             imgURL = URL.createObjectURL(this.files[0]);
             console.log(imgURL);
         }
-
 
     })
 
