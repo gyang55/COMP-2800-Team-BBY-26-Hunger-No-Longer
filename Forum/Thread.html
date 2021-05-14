@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunger No Longer: Thread</title> 
+    <link rel="stylesheet" type="text/css" href="css/thread.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="icon" href="/favicon/favicon-32x32.png">
+</head>
+<body>
+    <!--********* NAV BAR START ***********-->
+    <div id="outerContainer" class="closebtn" onclick="closeNav()">
+        <div id="mySidenavContainer" class="sidenav">
+            <div id="profileBackground">
+                <div id="profile">
+                    <div></div>
+                    <div id="profilePicContainer">
+                        <img id="profilePic" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ece92f41f4c83000768d787%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D421%26cropX2%3D1694%26cropY1%3D37%26cropY2%3D1310" width="100px" height="100px">
+                    </div>
+                    <div id="profileName">
+                        <p><b>Damian Lillard</b></p>
+                    </div>
+                    <div id="profileEmail">
+                        <p>damian_lillard@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mySidenavContents">
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>Place Order</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
+                <a href="Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a>
+                <a href="/aboutUs.html"><img id="menuIcon" src="https://img.icons8.com/doodle/27/000000/employee-card--v1.png"/><b>About Us</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/help.png"/><b>Help</b></a>
+                <a href="../index.html" onclick="logOut()" ><img id="logOutIcon" src="https://img.icons8.com/plasticine/30/000000/export.png"/> <b>Log Out</b>  </a>
+            </div>
+        </div>      
+        <!--********* NAV BAR END ***********-->
+
+        <div id="InnerContainer">
+                <div id="headingContainer">
+                    <div id="hamburgerMenu">
+                        <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
+                    </div>
+                    <div id="title">
+                        <span id="title-font">SOCIAL HUB</span>
+                    </div>
+                    <div id="homeButtonContainer">
+                        <div id="homeButton">
+                            <img id="actualHomeButton" src="https://img.icons8.com/material/42/000000/home--v5.png">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST CONTAINER -->
+                <div id="postContainer">
+                    <!-- 1 SINGLE POST HANDLE -->
+                    <div id="post">
+                        <div id="dateAndUserContainer">
+                            <div id="userNamePosted">
+                                <p>TreeStump123</p>
+                            </div>
+                            <div id="datePosted">
+                                <p>4 hours ago</p>
+                            </div>
+                        </div>
+                        <div id="postTitle">
+                            <p>THREAD: Looking For Volunteers? LOLOLOLOLOL</p>
+                        </div>
+                        <div id="postBody">
+                            <p>iasdhihbashjb Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eveniet nesciunt, hic aperiam fugit reiciendis excepturi sit repellendus quaerat unde iure tempora, doloremque accusantium nostrum ratione, ab aliquam ipsam modi.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eligendi laborum praesentium ipsa odio harum nostrum laboriosam, possimus ex repellat voluptas id tempora quibusdam dignissimos labore recusandae blanditiis reprehenderit architecto!
+                            </p>
+                        </div>
+                        <div id="like-LoveContainer">
+                            <div id="heart">
+                                <a href=""><img src="https://img.icons8.com/color/25/000000/like--v3.png"/></a>
+                            </div>
+                            <div id="smile">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                        </div>                     
+                    </div>
+
+                    <!-- COMMENT HERE -->
+                    <div id="comment">
+                        <div id="dateAndUserContainer2">
+                            <div id="userCommentPic">
+                                <img src="https://moderndogmagazine.com/sites/default/files/images/uploads/Inset-1_34.jpg" width="35px" height="35px">
+                            </div>
+                            <div id="userNamePosted2">
+                                <p>XxWasabiXSushixX</p>
+                            </div>
+                            <div id="datePosted2">
+                                <p>1 hour ago</p>
+                            </div>
+                        </div>
+                        <div id="commentTextContainer">
+                            <div></div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam totam molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                        </div>
+                        <div id="like-replyContainer">
+                            <div id="smile2">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile2">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                            <div id="replyButton">
+                                <span id="replyButtonFont">REPLY</span>
+                            </div>
+                        </div>       
+                    </div>
+                    <div id="comment">
+                        <div id="dateAndUserContainer2">
+                            <div id="userCommentPic">
+                                <img src="https://moderndogmagazine.com/sites/default/files/images/uploads/Inset-1_34.jpg" width="35px" height="35px">
+                            </div>
+                            <div id="userNamePosted2">
+                                <p>XxWasabiXSushixX</p>
+                            </div>
+                            <div id="datePosted2">
+                                <p>1 hour ago</p>
+                            </div>
+                        </div>
+                        <div id="commentTextContainer">
+                            <div></div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam totam molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                        </div>
+                        <div id="like-replyContainer">
+                            <div id="smile2">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile2">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                            <div id="replyButton">
+                                <span id="replyButtonFont">REPLY</span>
+                            </div>
+                        </div>       
+                    </div>
+                    <div id="comment">
+                        <div id="dateAndUserContainer2">
+                            <div id="userCommentPic">
+                                <img src="https://moderndogmagazine.com/sites/default/files/images/uploads/Inset-1_34.jpg" width="35px" height="35px">
+                            </div>
+                            <div id="userNamePosted2">
+                                <p>XxWasabiXSushixX</p>
+                            </div>
+                            <div id="datePosted2">
+                                <p>1 hour ago</p>
+                            </div>
+                        </div>
+                        <div id="commentTextContainer">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam totam molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                        </div>
+                        <div id="like-replyContainer">
+                            <div id="smile2">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile2">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                            <div id="replyButton">
+                                <span id="replyButtonFont">REPLY</span>
+                            </div>
+                        </div>       
+                    </div>
+                    <div id="comment">
+                        <div id="dateAndUserContainer2">
+                            <div id="userCommentPic">
+                                <img src="https://moderndogmagazine.com/sites/default/files/images/uploads/Inset-1_34.jpg" width="35px" height="35px">
+                            </div>
+                            <div id="userNamePosted2">
+                                <p>XxWasabiXSushixX</p>
+                            </div>
+                            <div id="datePosted2">
+                                <p>1 hour ago</p>
+                            </div>
+                        </div>
+                        <div id="commentTextContainer">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam tot am molestias voluptate aspernatur commodi velit a neque quasi nihil. Earum dolore tenetur dolor debitis eos quam voluptatibus excepturi dolorem deserunt.
+                        </div>
+                        <div id="like-replyContainer">
+                            <div id="smile2">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile2">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                            <div id="replyButton">
+                                <span id="replyButtonFont">REPLY</span>
+                            </div>
+                        </div>       
+                    </div>
+
+                </div>
+                <div id="lowerNavContainer">
+                    <div id="postButton" data-toggle="modal" data-target="#myModal">
+                        <span id="postButtonFont">COMMENT</span>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content" keyboard="true">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Post A Comment</h4>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
+                                <form id="userCommentForm">
+                                <textarea name="the-textarea" id="textBody" maxlength="500" placeholder="What's On Your Mind?" autofocus required></textarea>
+                                </form>
+                                <div id="the-count">
+                                <span id="current">0</span>
+                                <span id="maximum">/ 500</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" id="submitButton" type="submit">Submit</a></button></a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!--------------------------------------------------------------------->
+<!-- JS files: Your own JavaScript functions included here    -->
+<!--------------------------------------------------------------------->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="js/slidingNav.js"></script> 
+<script src="js/createAPostText.js"></script> 
+<script src="/private/firebase-api.js"></script>
+<script src="/private/firebase-logout.js"></script>
+<script src="/Forum/js/redirectAuth.js"></script>

@@ -1,0 +1,10 @@
+#volunteerButtons {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 50px;
+}
+#volunteerButtons > h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hunger No Longer | Feeding Everyone</title>
-  <link rel="stylesheet" type="text/css" href="Forum/css/originalWebsiteStyle.css"/>
-  <link rel="icon" href="/favicon/favicon-32x32.png">
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer</title>
+    <link rel="stylesheet" type="text/css" href="../Forum/css/originalWebsiteStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="css/volunteer.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
-
 <body>
   <!-------------------------------------->
   <!-- The following is HTML for layout -->
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div id="mySidenavContents">
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>Login</b></a>
+<!--                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>Login</b></a>-->                
                 <a href="aboutUs_noAccess.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>About Us</b></a>
     <!--        <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
@@ -43,7 +43,7 @@
         <!--********* NAV BAR END ***********-->
         <div id="InnerContainer">
         <div id="headingContainer">
-          <div id="hamburgerMenu">
+          <div id="hamburgerMenu" style="padding-left: 5vw;">
               <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
           </div>
           <div id="title">
@@ -56,12 +56,12 @@
           </div>
       </div>
       </div>
-
-      <div class="container mt-3">
-        <h1 class="display-4"></h1>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
-    </div>
+<div id=volunteerButtons>    
+<h2 style="padding-left: 5vw;">Hello, Would you like to volunteer for Hunger No Longer?</h2>
+<a href="volunteer-reg.html" style="padding-left: 5vw;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Yes!</a>
+<a href="../individual.html" style="padding-left: 5vw;" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">No</a>
+</div>
+       
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -79,9 +79,7 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="private/firebase-api.js"></script>
-  <script src="Forum/js/slidingNav.js"></script>
-  <script src="private/firebase-login.js"></script>
+  <script src="../private/firebase-api.js"></script>
+  <script src="../Forum/js/slidingNav.js"></script>
 </body>
-
 </html>
