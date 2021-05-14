@@ -18,6 +18,7 @@ var geolocate = new mapboxgl.GeolocateControl({
     },
     trackUserLocation: true
 });
+
 // Add the control to the map.
 map.addControl(geolocate);
 // Set an event listener that fires
