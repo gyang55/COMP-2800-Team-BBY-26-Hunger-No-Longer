@@ -1,41 +1,26 @@
-'use strict'
-
-//1) For Thread Title:
-const inputTitleForm = document.querySelector('#inputTitleForm');
-inputTitleForm.addEventListener('input', (e) => {
+//1) GET input values from user
+const inputThreadForm = document.querySelector('#threadForm');
+inputThreadForm.addEventListener('submit', (e) => {
     e.preventDefault(); //This function will prevent the page from refreshing upon user hitting ENTER KEY upon input.
 
-    //Get Post Title
-    const title = inputTitleForm['titleBox'].value;
-    console.log(title);
+    //Upload into database (Post Collection)
+    db.collection('Post').add({
+        title: inputThreadForm['titleBox'].value,
+        body: inputThreadForm['textBody'].value,
+        tag: inputThreadForm['tagBox'].value,
+        date: jQuery.timeago(new Date()) //From Timeago plugin
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        inputThreadForm.reset();
+        window.location.replace("/Forum/Forum.html");
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
 });
 
 /***********************************************************************************/
 
-
-//2) For Thread Body
-const inputBodyText = document.querySelector("#inputBodyTextForm");
-inputBodyText.addEventListener('input', (e) => {
-    e.preventDefault();
-    
-    //Get textArea stuff
-    const bodyText = inputBodyText['textBody'].value;
-    console.log(bodyText);
-});
-
-
-/***********************************************************************************/
-
-//3) For Tags
-const inputTag = document.querySelector("#inputTagForm");
-inputTag.addEventListener('input', (e) => {
-    e.preventDefault();
-
-    //Get textArea stuff
-    const userInputTag = inputTag['tagBox'].value;
-    console.log(userInputTag);
-});
-
-// 4) Upload Thread Attributes to FireBase
 
 
