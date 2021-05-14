@@ -71,6 +71,10 @@ a {
     height: 50%;
 }
 
+.title {
+    display: inline-block;
+}
+
 .date {
     display: inline-block;
     font-size: 0.2em;
