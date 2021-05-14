@@ -58,25 +58,35 @@
   <!-- This page modifies Volunteer infomation -->
   <div class="volunteerForm" style="padding-left: 20vw; padding-right: 20vw">
   <h2>Please fill out the form to register as a volunteer</h2>
-  <form>
+  
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="First name">
+        <input type="text" class="form-control" id="fName-input" placeholder="First name">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Last name">
+        <input type="text" class="form-control" id="lName-input" placeholder="Last name">
       </div>
     </div>
     <div class="form-group">
       <label for="exampleInputAddress">Address</label>
-      <input type="address" class="form-control" id="exampleInputAddress" placeholder="Address">
+      <input type="address" class="form-control" id="address-input" placeholder="Address">
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="exampleInputAddress">City</label>
+        <input type="text" class="form-control" id="city-input" placeholder="City">
+      </div>
+      <div class="col">
+        <label for="exampleInputAddress">Province</label>
+        <input type="text" class="form-control" id="province-input" placeholder="Province">
+      </div>
     </div>
     <div class="form-group">
       <label for="exampleInputNumber">Phone Number</label>
-      <input type="number" class="form-control" id="exampleInputPhoneNumber" placeholder="XXX-XXX-XXXX">
+      <input type="number" class="form-control" id="number-input" placeholder="XXX-XXX-XXXX">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <button type="submit" id="button-sub" class="btn btn-primary">Submit</button>
+  
 </div>
        
 
@@ -98,5 +108,6 @@
   <!--------------------------------------------------------------------->
   <script src="../private/firebase-api.js"></script>
   <script src="../Forum/js/slidingNav.js"></script>
+  <script src="js/volunteer.js"></script>
 </body>
 </html>
