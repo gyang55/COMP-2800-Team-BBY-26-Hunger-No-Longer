@@ -16,17 +16,7 @@ optionalButton.addEventListener('click', (e) => {
 });
 
 //2) IF USER DECIDES TO UPLOAD ONE (From Maksim Ivanov: https://www.youtube.com/watch?v=RLL9FEccW1Y)
-const onFileChange = async (e) => {
-    const file = e.target.files[0]
-    const storageRef = app.storage().ref() //Firebase Storage Reference
-    const fileRef = storageRef.child(file.name)
-    await fileRef.put(file)
-    const fileURL = await fileRef.getDownloadURL()
-}
 
-const onSubmit = (e) => {
-    e.preventDefault();
-}
 
 
 
