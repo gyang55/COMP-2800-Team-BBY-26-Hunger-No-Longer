@@ -36,7 +36,7 @@
             </div>
             <div id="mySidenavContents">
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>Login</b></a>
-                <a href="/aboutUs_limitedAccess.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>About Us</b></a>
+                <a href="/aboutUs_limitedAccess2.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>About Us</b></a>
     <!--        <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a> -->
@@ -59,19 +59,14 @@
       </div>
       </div>
 
-      <!-- BUTTONS MAIN -->
-<div id=landingPage>
-    <h2>Hello, pleasure seeing you today... select 1 of the 3 options. </h2>
-    <div>
-        <a href="individual.html" class="btn btn-primary btn-lg active" id="signUpIndividual" role="button" aria-pressed="true">Indivdiual</a>
-    </div>
-    <div>
-        <a href="#" class="btn btn-primary btn-lg active" id="signUpCharity" role="button" aria-pressed="true">Charity</a>
-    </div>
-    <div>
-        <a href="#" class="btn btn-primary btn-lg active" id="signUpBusinessOwner" role="button" aria-pressed="true">BusinessOwner</a>
-    </div>
-</div>
+    <!-- ASSIGNMENT OF USERNAME -->
+    <form id="usernameForm">
+        <div id=landingPage>
+            <h2>Step 2: Assign a username for your account</h2>
+            <input type="text" id="usernameBox" name="username" required>
+            <button type="submit" class="btn btn-default" id="submitButton"><a href="#" style="color: white;">Submit</a></button>
+        </div>
+    </form>
 
 
 
@@ -94,6 +89,7 @@
   <script src="/private/firebase-api.js"></script>
   <script src="/Forum/js/slidingNav.js"></script>
   <script src="/private/redirectAuth.js"></script>
+  <script src="/Landing/js/usernameAssignment.js"></script>
 </body>
 
 </html>
