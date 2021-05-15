@@ -77,8 +77,8 @@ body {
 
 form {
     display: grid;
-    grid-template-rows: 15% 25% 60%;
-    height: 75%
+    grid-template-rows: 25% 60%;
+    height: 65%
 }
 
 fieldset {
@@ -103,6 +103,15 @@ label {
 
 input {
     border: inset;
+}
+
+#busname {
+    width: 80%;
+}
+
+#phone {
+    width: 80%;
+    margin-top: 10px;
 }
 
 .inputAddress {
