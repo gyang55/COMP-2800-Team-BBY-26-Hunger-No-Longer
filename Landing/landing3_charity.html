@@ -36,7 +36,7 @@
             </div>
             <div id="mySidenavContents">
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>Login</b></a>
-                <a href="/aboutUs_limitedAccess2.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>About Us</b></a>
+                <a href="/AboutUs/aboutUs_limitedAccess3charity.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>About Us</b></a>
     <!--        <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a> -->
@@ -59,16 +59,15 @@
       </div>
       </div>
 
-    <!-- ASSIGNMENT OF USERNAME -->
-    <form id="usernameForm">
+    <!-- PICTURE UPLOAD (Modified Code by Maksim Ivanov: https://www.youtube.com/watch?v=RLL9FEccW1Y) -->
+    <form id="imageForm">
         <div id=landingPage>
-            <h2>Step 2: Assign a username for your account</h2>
-            <input type="text" id="usernameBox" name="username" required>
-            <button type="submit" class="btn btn-default" id="submitButton"><a href="#" style="color: white;">Submit</a></button>
+            <h2>Step 3: Choose a profile picture (Optional)</h2>
+            <img id="userImage" src="" width="200px" height="200px">
+            <button type="submit" class="btn btn-default" id="pictureButton"><a href="#" style="color: white;">Choose From Device</a></button>
+            <button type="submit" class="btn btn-default" id="optionalButton"><a href="#" style="color: white;">Not Now</a></button>
         </div>
     </form>
-
-
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -89,7 +88,7 @@
   <script src="/private/firebase-api.js"></script>
   <script src="/Forum/js/slidingNav.js"></script>
   <script src="/private/redirectAuth.js"></script>
-  <script src="/Landing/js/usernameAssignment.js"></script>
+  <script src="/Landing/js/pictureAssignment_charity.js"></script>
 </body>
 
 </html>

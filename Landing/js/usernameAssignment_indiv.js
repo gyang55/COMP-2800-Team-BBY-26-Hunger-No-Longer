@@ -6,7 +6,7 @@ usernameInputForm.addEventListener('submit', (e) => {
         username: usernameInputForm['usernameBox'].value
     }).then((docRef) => {
         console.log("Updated!", docRef);
-        window.location.replace("/Landing/landing3.html");
+        window.location.replace("/Landing/landing3_indiv.html");
     })
     .catch((error) => {
         console.error("Error updating document: ", error);

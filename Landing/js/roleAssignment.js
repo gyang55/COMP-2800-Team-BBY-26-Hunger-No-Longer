@@ -7,7 +7,7 @@ individualButton.addEventListener('click', (e) => {
         role: "Individual"
     }).then((docRef) => {
         console.log("Updated!", docRef);
-        window.location.replace("/Landing/landing2.html");
+        window.location.replace("/Landing/landing2_indiv.html");
     })
     .catch((error) => {
         console.error("Error updating document: ", error);
@@ -25,7 +25,7 @@ charityButton.addEventListener('click', (e) => {
         role: "Charity"
     }).then((docRef) => {
         console.log("Updated!", docRef);
-        window.location.replace("/Landing/landing2.html");
+        window.location.replace("/Landing/landing2_charity.html");
     })
     .catch((error) => {
         console.error("Error updating document: ", error);
@@ -43,7 +43,7 @@ businessButton.addEventListener('click', (e) => {
         role: "Business"
     }).then((docRef) => {
         console.log("Updated!", docRef);
-        window.location.replace("/Landing/landing2.html");
+        window.location.replace("/Landing/landing2_business.html");
     })
     .catch((error) => {
         console.error("Error updating document: ", error);
