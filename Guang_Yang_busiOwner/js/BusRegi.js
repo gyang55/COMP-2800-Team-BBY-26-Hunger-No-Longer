@@ -6,12 +6,20 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             loggedInUser = user;
-
-        } else {
-            console.warn("No user detected!");
-            window.location.href = "login.html";
         }
+        /* else {
+                   console.warn("No user detected!");
+                   window.location.href = "login.html";
+               } */
     });
+
+
+    /**
+     * Reset the form 
+     */
+    $('#reset').click(() => {
+        $('form')[0].reset();
+    })
 
     /**
      * Register business.
@@ -29,7 +37,7 @@ $(document).ready(function() {
 
         var user = firebase.auth().currentUser;
         updateBusiness.add({
-            UID: user.uid,
+            //  UID: user.uid,
             bName: busName,
             bLocation: address,
             bphoneNo: busPhone,
