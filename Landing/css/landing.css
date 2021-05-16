@@ -427,6 +427,24 @@ body {
     color: white;
 }
 
+#submitButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(48, 216, 132); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgb(0, 250, 125) , rgb(43, 197, 125));
+    padding-top: 3px;
+    height: 55px;
+    border-radius: 20px 20px 20px 20px; 
+    width: 35%;
+    color: white;
+}
+
+#submitButton > a:link {
+    color: white;
+}
+
 /********TEXT AREA BOOTSTRAP STYLING*******/
 #textBody {
     width: 100%;
