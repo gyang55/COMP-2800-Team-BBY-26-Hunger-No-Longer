@@ -15,8 +15,7 @@ optionalButton.addEventListener('click', (e) => {
     });
 });
 
-//2) IF USER DECIDES TO UPLOAD ONE (From Maksim Ivanov: https://www.youtube.com/watch?v=RLL9FEccW1Y)
-
+//2) IF USER DECIDES TO UPLOAD ONE
 /**  
  * when User is logged in, listens for file upload
  * @param user uploads user custom photo for profile picture.
@@ -50,18 +49,19 @@ optionalButton.addEventListener('click', (e) => {
                     storageRef.getDownloadURL()
                         .then(function (url) { // Get URL of the uploaded file
                             console.log(url); // Save the URL into users collection
-                            db.collection("users").doc(user.uid).set({
+                            db.collection("users").doc(user.uid).update({ //.update NOT .set
                                     "pictureURL": url
                                 }, {
                                     merge: true
                                 })
-                                .then(function () {})
+                                .then(function () {
+                                    window.location.replace("/Forum/Forum.html");
+                                })
                         })
                 })
             })
         }
         uploadUserProfilePic();    
-
     } else {
         // No user is signed in.
         console.warn("User is not logged in")

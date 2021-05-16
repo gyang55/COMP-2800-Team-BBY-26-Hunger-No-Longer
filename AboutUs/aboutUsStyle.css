@@ -342,12 +342,30 @@ body {
 /*******MEET THE TEAM SECTION*******/
 #meetTheTeamContainer {
     display: grid;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
     background: linear-gradient(
         rgba(0, 0, 0, 0.4), 
         rgba(0, 0, 0, 0.4)
     );
     row-gap: 20px;
+    backdrop-filter: blur(10px);
+}
+
+#appDescription {
+    display: grid;
+    grid-template-rows: auto auto;
+    color: white;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#descTitle {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    border-bottom: white solid 1px;
 }
 
 #meetTheTeamTitle {
