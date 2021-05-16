@@ -45,17 +45,10 @@
     width: 30%;
     height: 100%;
     float: left;
-    background-position: center center;
-    background-size: cover;
-    background-image: url(../img/banner.jpg);
 }
 
-a {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    display: inline-block;
-    text-decoration: none;
-    color: black;
+.pic img {
+    width: 100%;
 }
 
 .content {
@@ -77,14 +70,16 @@ a {
 
 .date {
     display: inline-block;
-    font-size: 0.2em;
+    font-size: 15px;
 }
 
 ul {
+    padding-left: 0;
     margin-bottom: 0;
 }
 
 button {
+    margin-left: 10px;
     display: block;
     background-color: salmon;
     color: white;

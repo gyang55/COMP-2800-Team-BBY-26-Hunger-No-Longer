@@ -45,7 +45,7 @@
             </div>
             <div id="mySidenavContents">
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png" /><b>Post News</b></a>
+                <a href="#" id='sidePostNews'><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png" /><b>Post News</b></a>
             </div>
         </div>
         <!--********* Slide bar ends ***********-->
@@ -76,46 +76,62 @@
             <div class="newsContainer">
                 <div class="news">
                     <div class="pic" id="pic0">
-
+                        <img src="" alt="">
                     </div>
                     <div class="content post">
-                        <h5 class="title">
+                        <h5 class="title" id="title0">
                             Title
                         </h5>
                         <p class="date" id="date0">Date</p>
-                        <ul class="read-more-wrap">
-                            <li>Food List</li>
-                            <li class="dots">Food List</li>
-                            <span class="more">
-                                <li>Food List</li>
-                                <li>Food List</li>
-                            </span>
+                        <ul class="read-more-wrap" id="newsBody0">
                             <button class=" read ">read more</button>
                         </ul>
 
                     </div>
                 </div>
                 <div class="news">
-                    <div class="pic" id="pic0">
-
+                    <div class="pic" id="pic1">
+                        <img src="" alt="">
                     </div>
                     <div class="content post">
-                        <h5 href="#" class="title">
+                        <h5 class="title" id="title1">
                             Title
                         </h5>
-                        <p class="date" id="date0">Date</p>
-                        <ul class="read-more-wrap">
-                            <li>Food List</li>
+                        <p class="date" id="date1">Date</p>
+                        <ul class="read-more-wrap" id="newsBody1">
+                            <!--   <li>Food List</li>
                             <li class="dots">Food List</li>
                             <span class="more">
                                 <li>Food List</li>
                                 <li>Food List</li>
-                            </span>
+                            </span> -->
                             <button class=" read ">read more</button>
                         </ul>
 
                     </div>
                 </div>
+                <div class="news">
+                    <div class="pic" id="pic2">
+                        <img src="" alt="">
+                    </div>
+                    <div class="content post">
+                        <h5 class="title" id="title2">
+                            Title
+                        </h5>
+                        <p class="date" id="date2">Date</p>
+                        <ul class="read-more-wrap" id="newsBody2">
+                            <!--   <li>Food List</li>
+                            <li class="dots">Food List</li>
+                            <span class="more">
+                                <li>Food List</li>
+                                <li>Food List</li>
+                            </span> -->
+                            <button class=" read ">read more</button>
+                        </ul>
+
+                    </div>
+                </div>
+
             </div>
 
 
@@ -141,8 +157,18 @@
 
 </html>
 
-<!-- Script file here to allow DOM elements to LOAD first!!!! -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js " integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8 " crossorigin="anonymous "></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
-<script src="../js/slidingNav.js "></script>
+<!----------------------------------------------->
+<!-- JS: Boostrap, Firebase, API related    -->
+<!----------------------------------------------->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+<script src="../../private/firebase-api.js"></script>
 <script src="../js/BusNews.js"></script>
+<script src="../js/slidingNav.js"></script>

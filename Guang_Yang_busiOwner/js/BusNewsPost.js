@@ -106,15 +106,13 @@ $(document).ready(function() {
     /**
      * Update business news posts.
      * 
-     * @param busName name of business
-     * @param address address of business
-     * @param phone phone number of business
-     * @param city city of business
-     * @param state prov of business
-     * @param zip post code of business
-     * 
+     * @param content name of business
+     * @param bestDate address of business
+     * @param title phone number of business
+     * @param title phone number of business
+     * @param postDate phone number of business
      */
-    function updateBusinessNews(content, bestDate, title, img) {
+    function updateBusinessNews(content, bestDate, title, img, postDate) {
         var updateBusinessNews = db.collection("BusinessNews");
 
         var user = firebase.auth().currentUser;
@@ -124,6 +122,8 @@ $(document).ready(function() {
             BestDate: bestDate,
             Title: title,
             Image: img,
+            PostDate: postDate,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
         }).then(function() {
             window.location.href = './BusRegisFeedBack.html';
         });
@@ -140,11 +140,22 @@ $(document).ready(function() {
                 foodArr.push($(dom).find('.foodname').val()) // Put food name in each form into a array
                 dateArr.push($(dom).find('.inputDate').val()); // Put best use date in each form into a array
             });
+
+            /** 
+             * Get current date as post date.
+             */
+            var currentdate = new Date();
+            var twoDigitMonth = ((currentdate.getMonth().length + 1) === 1) ? (currentdate.getMonth() + 1) : '0' + (currentdate.getMonth() + 1);
+            var postDate = currentdate.getFullYear() + "-" + currentdate.getDate() + "-" + twoDigitMonth;
+
             var content = foodArr;
             var bestDate = dateArr;
             var title = $('#newsTitle').val();
             var img = dataURI ? dataURI : imgURL;
-            updateBusinessNews(content, bestDate, title, img);
+
+
+
+            updateBusinessNews(content, bestDate, title, img, postDate);
         });
     }
     getInfo();
