@@ -71,31 +71,17 @@ $(document).ready(function() {
 
 
     // Choose image from phone
-    var imgURL;
     $('#formFileSm').on('change', function() {
 
         // Check if the files are uploaded
         if (this.files && this.files[0]) {
-            var file = this.files[0];
-            console.log(file.toDataURL('image/jpeg'));
-            imgURL = URL.createObjectURL(this.files[0]);
-            console.log(imgURL);
-            /* var reader = new FileReader();
-            reader.readAsDataURL(imgURL);
+            console.log(URL.createObjectURL(this.files[0]));
+            var reader = new FileReader();
+            reader.readAsDataURL(this.files[0]); // Read the upload img.
             reader.onloadend = () => {
-                    var base64 = reader.result;
-                    console.log(base64);
-                } */
-            /* db.collection('BusinessNews')
-                .where('Title', '==', 'LectOver News3')
-                .get()
-                .then((snap) => {
-                    snap.forEach((doc) => {
-                        console.log(doc.data().Image);
-                        $('#try img').attr('src', `${doc.data().Image}`)
-                    })
-                }) */
-
+                dataURI = reader.result; // Convert to base64.
+                console.log(dataURI);
+            }
         }
 
     })
@@ -133,7 +119,7 @@ $(document).ready(function() {
 
         var user = firebase.auth().currentUser;
         updateBusinessNews.add({
-            //UID: user.uid,
+            UID: user.uid,
             Content: content,
             BestDate: bestDate,
             Title: title,
@@ -167,7 +153,7 @@ $(document).ready(function() {
             var content = foodArr;
             var bestDate = dateArr;
             var title = $('#newsTitle').val();
-            var img = dataURI ? dataURI : imgURL;
+            var img = dataURI;
 
             updateBusinessNews(content, bestDate, title, img, postDate);
         });

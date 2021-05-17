@@ -36,7 +36,7 @@ $(document).ready(function() {
 
         var user = firebase.auth().currentUser;
         updateBusiness.add({
-            //  UID: user.uid,
+            //UID: user.uid,
             bName: busName,
             bLocation: address,
             bphoneNo: busPhone,
