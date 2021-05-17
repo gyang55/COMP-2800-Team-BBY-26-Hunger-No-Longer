@@ -8,6 +8,16 @@
   <link rel="stylesheet" type="text/css" href="Forum/css/originalWebsiteStyle.css"/>
   <link rel="icon" href="/favicon/favicon-32x32.png">
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <style>
+    /* MAKE THIS EXTERNAL */
+    #mySidenavContainer > #profileBackground {
+        display: grid;
+        grid-template-rows: auto;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/hunger-no-longer.appspot.com/o/images%2FdjR9UC8ZHDRvrKfiaf0aq4ZL46b2.jpg?alt=media&token=ab3a6bbd-a045-44e8-b2f2-505cfa98a8a7);
+        background-size: cover;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,13 +32,13 @@
                 <div id="profile">
                     <div></div>
                     <div id="profilePicContainer">
-                        <img id="profilePic" src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ece92f41f4c83000768d787%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D421%26cropX2%3D1694%26cropY1%3D37%26cropY2%3D1310" width="100px" height="100px">
+                        <img id="profilePic" src="https://firebasestorage.googleapis.com/v0/b/hunger-no-longer.appspot.com/o/images%2FdjR9UC8ZHDRvrKfiaf0aq4ZL46b2.jpg?alt=media&token=ab3a6bbd-a045-44e8-b2f2-505cfa98a8a7" width="100px" height="100px">
                     </div>
                     <div id="profileName">
-                        <p><b>Damian Lillard</b></p>
+                        <p><b>Hunger No Longer</b></p>
                     </div>
                     <div id="profileEmail">
-                        <p>damian_lillard@gmail.com</p>
+                        <p>no_longer_hungry@app.com</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +61,6 @@
           </div>
           <div id="homeButtonContainer">
               <div id="homeButton">
-                  <img id="actualHomeButton" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAE10lEQVRoge2Zb0wTZxzHv3f39O4KHEiLs5VamAjVqSxR0ExWW9riZuKfTZMtMSZmmYnz1ZZs77eXvnDJXiwxezWzmGyLeyExWTIjQjKhBctksGlAQfwDDgFhWPv37p69gQWxpb320Mb0k9yb5+7355vn+9xzf4ACmeH3eo/5vd5jK12HWanEwf37i+RY7Ayl9Mh8kR+JKH7ScPFiOFXMZwcavkp6giVnv7kQGF2uHsmh15RcbW52KLFYKy8I1dWNjYRhWYz29HwQj0Te7tyz50DTpUt/pQj9sthoiHMcpy4MzIWiIiB3AFhWCKunAAAIeL1HCcf1lVosNQ6XSzBKEsTiYtTt3i2sstnWsar6h9/jOZ4qvta+ht/mWCcuHJnW1W1G2t1u0WgwnAZwwrZlCzHb7c+cZzkO9vp6UmIy4X5//5lAS4uHiOLx5aymBV1mpNvrrTPy/HVeEI7XOZ3PiViMyWaDw+kkvNF4SIlGB3qamzfr0UPOQvw+3yHKstfLLJYNDrdbMEpS2hhRklDndAqlFksVJaS3y+c7kmsfWVsrnZXSwRGC6m3buMcPHnD3+/t/CLS07PsFs9m2k52QQEtLLQO0GgRhffWOHSSTWUiFyWaDUZK4O8Hg4XdjpZiMqECJ9jyardXl8bzPAH2lVmttplZKh7GsDA6Xi1+72oLqoQjER1HNOTKekV/37hVMsvw1gBOVWVgpHRwheH17A6bv3QMGBiDMyJirzXxqMhLS6fFUEVVtNQjCxlytlA6z3Y6isjIMB6+B75tFicoixKpp47h0F3R5ve8RjmsrtVotNTt38ryY8R6VNQZRhNluR+zxv1g3J6Nc4e6fH77bvlxMymetxVbK5q6kC5RicnQUYzduUIZhflJDoY93+f2RZJcmFdLp8VQRQi4YBGFTdWOjLgs6F8Kzs7gTDCYUWb6lxGIHd3V03F56zXNCAj7fQTDMuVKrVayqrycsl9Z9LwQlHsfdvj7lyeRknFL60VttbT8vPv+/kHa3mxgNhlMAPn1pVkrHvNXGb95UQelZqbz85Obz5+PAvJCrPp+d57gLhOffyAcrpSM0PY3R3l5ZUdUhJZE40HTlyjALAIRlzxWtWrV14bE73ykxm7HR5SJiSYmDI+R7YH4fYSjlwrOz9EZ7R0xhOYEQ3V9TdEWWVXCqEqNygmUo5YB5IaqinGIotU5UVNWNrd38uXNnzcvtNA093cOoHP/72zUTI0NUVR8CS+5aX5z53Q3KtJ842vRyOsyQ7851AgxtPn3S2bEwlt8e0kBBSL6hy8eHyd7LeBT8LavY1xrewertvpx70EVIdGYC8qO72LBe29PA7ZF7iM5M6NGCfp+DiiUJb27dpCnm4eSMXuVfnTVSEJJvFITkGwUh+UZBSDYoioLBoRFMTT/WPfcLFXJreBTdwT60dXTpnvuFCqkwl0MQeFRaLbrnXpGfoamoMJvw4eF9K5L7lVnsSWdkOpzQlCSSUMFQqrk4pRSRhKq5XjKSC3mqLXE4rqA4ywbCcQXQWC8Zr4y1CkLyjaRrJPokrGnrlSNR49NQyPjnwE1NxZ+GQpAj0Uj0STjpz5tlMC0deEaIymCGpbjs7xrUlLViKry2AlJlcETrO7iEqX/CY1Ndg+MaA6Ey0O+FP5/4D7YgoDh6KDoxAAAAAElFTkSuQmCC"/>
               </div>
           </div>
       </div>
