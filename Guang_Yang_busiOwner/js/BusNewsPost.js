@@ -41,12 +41,10 @@ $(document).ready(function() {
 
         // If user has input device, play the video.
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-
             navigator.mediaDevices.getUserMedia({
                 video: true
             }).then(stream => {
                 video.srcObject = stream;
-
                 video.play();
             })
         }
@@ -78,8 +76,26 @@ $(document).ready(function() {
 
         // Check if the files are uploaded
         if (this.files && this.files[0]) {
+            var file = this.files[0];
+            console.log(file.toDataURL('image/jpeg'));
             imgURL = URL.createObjectURL(this.files[0]);
             console.log(imgURL);
+            /* var reader = new FileReader();
+            reader.readAsDataURL(imgURL);
+            reader.onloadend = () => {
+                    var base64 = reader.result;
+                    console.log(base64);
+                } */
+            /* db.collection('BusinessNews')
+                .where('Title', '==', 'LectOver News3')
+                .get()
+                .then((snap) => {
+                    snap.forEach((doc) => {
+                        console.log(doc.data().Image);
+                        $('#try img').attr('src', `${doc.data().Image}`)
+                    })
+                }) */
+
         }
 
     })
@@ -146,14 +162,12 @@ $(document).ready(function() {
              */
             var currentdate = new Date();
             var twoDigitMonth = ((currentdate.getMonth().length + 1) === 1) ? (currentdate.getMonth() + 1) : '0' + (currentdate.getMonth() + 1);
-            var postDate = currentdate.getFullYear() + "-" + currentdate.getDate() + "-" + twoDigitMonth;
+            var postDate = currentdate.getFullYear() + "-" + twoDigitMonth + '-' + currentdate.getDate();
 
             var content = foodArr;
             var bestDate = dateArr;
             var title = $('#newsTitle').val();
             var img = dataURI ? dataURI : imgURL;
-
-
 
             updateBusinessNews(content, bestDate, title, img, postDate);
         });

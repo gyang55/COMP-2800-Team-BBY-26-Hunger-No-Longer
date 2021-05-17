@@ -176,6 +176,7 @@ $(document).ready(function() {
 
                 // First news item
                 if (j == 0) {
+                    $('#pic' + i).children('img').attr('src', `${newsfeedList[i].Image}`);
                     let li = document.createElement('li');
                     li.classList.add('firstLi')
                     $(li).text(newsfeedList[i].Content[j] + " Best used before " + newsfeedList[i].BestDate[j]);
@@ -183,7 +184,7 @@ $(document).ready(function() {
                     console.log(i + " " + j + " " + newsfeedList[i].Content[j]);
 
                 } else if (j == 1) {
-
+                    $('#pic' + i).children('img').attr('src', `${newsfeedList[i].Image}`);
                     // Second news item
                     let li = document.createElement('li');
                     $('#newsBody' + i).children('li').after(li);
@@ -197,6 +198,7 @@ $(document).ready(function() {
                     console.log(i + " " + j + " " + newsfeedList[i].Content[j]);
 
                 } else {
+                    $('#pic' + i).children('img').attr('src', `${newsfeedList[i].Image}`);
                     // The rest news items are inside of span.
                     let li = document.createElement('li');
                     $(li).text(newsfeedList[i].Content[j] + " Best used before " + newsfeedList[i].BestDate[j]);
