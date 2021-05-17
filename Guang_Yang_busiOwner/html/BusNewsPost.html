@@ -37,7 +37,7 @@
                 Choose from your phone
             </h5>
             <input class="form-control form-control-sm" id="formFileSm" type="file" />
-            <input type="submit" id="submit">
+            <input type="submit" id="imgSubmit">
         </div>
 
 
@@ -103,9 +103,13 @@
                     </a>
                 </div>
                 <div class="foodInput">
-                    <form class="foodInputForm">
+                    <div class="newTitleContainer">
+                        <h4>Title</h4><input type="text" id="newsTitle"></div>
 
-                        <h4>Food name </h4><input type="text" class="foodname">
+                    <form class="foodInputForm" id="form0">
+
+                        <h4>Food name </h4>
+                        <input type="text" class="foodname">
 
                         <botton class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 
@@ -119,35 +123,52 @@
                         <h4>Best use date</h4><input type="date" class="inputDate">
                     </form>
                 </div>
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-sm" id="submitButton">Submit</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary btn-sm" id="reset">reset</button>
+                    </div>
+                </div>
+                <div id="try">
+                    <img style="width: 100PX; height: 100px;" src="" alt="">
+                </div>
+                <!--News post ends-->
 
-
-            </div>
-            <!--News post ends-->
-
-            <!--Fixed footer starts-->
-            <ul class="nav nav-pills nav-fill navbar fixed-bottom navbar-light bg-light" id="footer">
-                <li class="nav-item btn click-me" data-bs-toggle="tooltip" data-bs-placement="top" title="HOME">
-                    <a class="nav-link" href="main.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <!--Fixed footer starts-->
+                <ul class="nav nav-pills nav-fill navbar fixed-bottom navbar-light bg-light" id="footer">
+                    <li class="nav-item btn click-me" data-bs-toggle="tooltip" data-bs-placement="top" title="HOME">
+                        <a class="nav-link" href="main.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="black" class="bi bi-house-door-fill click-me" viewBox="0 0 16 16" style="z-index: 1">
                         <path
                             d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
                     </svg>
                     <p style="margin: 0 0 0 0; padding: 0 0 0 0; color:black;">Home</p>
                 </a>
-                </li>
-            </ul>
-            <!--Fixed footer ends-->
+                    </li>
+                </ul>
+                <!--Fixed footer ends-->
 
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
 
-<!-- Script file here to allow DOM elements to LOAD first!!!! -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!----------------------------------------------->
+<!-- JS: Boostrap, Firebase, API related    -->
+<!----------------------------------------------->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
 
 <!--Own JS-->
+<script src="../../private/firebase-api.js"></script>
 <script src="../js/slidingNav.js"></script>
 <script src="../js/BusNewsPost.js"></script>
