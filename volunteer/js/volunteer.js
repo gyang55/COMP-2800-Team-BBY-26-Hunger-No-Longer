@@ -8,7 +8,7 @@ $(document).ready(function () {
             loggedInUser = user;
         } else {
             console.warn("No user detected!");
-            window.location.href = "login.html";
+            window.location.replace = "index.html";
         }
     });
 });
