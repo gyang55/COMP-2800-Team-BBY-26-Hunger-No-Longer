@@ -37,6 +37,7 @@ optionalButton.addEventListener('click', (e) => {
                 fileInput.addEventListener('change', function (e) {
                     var file = e.target.files[0];
                     var blob = URL.createObjectURL(file);
+                    image.style.display = "initial";
                     image.src = blob; // display this image
                     //store using this name
                     var storageRef = storage.ref("images/" + user.uid + ".jpg");
@@ -44,6 +45,7 @@ optionalButton.addEventListener('click', (e) => {
                     storageRef.put(file)
                         .then(function () {
                             console.log('Uploaded to Cloud Storage.');
+                            alert("Upload Image Sucessful!");
                         })
                     //get the URL of stored file
                     storageRef.getDownloadURL()
