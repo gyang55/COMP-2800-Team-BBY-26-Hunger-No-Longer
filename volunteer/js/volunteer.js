@@ -6,8 +6,6 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             loggedInUser = user;
-            defaultProfilePic();
-            writeUserProfilePicField();
         } else {
             console.warn("No user detected!");
             window.location.href = "login.html";
@@ -27,22 +25,27 @@ $(document).ready(function () {
  * @param prov prov of volunteer
  * @param number phone number of volunteer
  */
- function updateVolunteer(address,city,prov,number) {
+function updateVolunteer(address,city,prov,number) {
     var updateVolunteer = db.collection("volunteer");
-
     var user = firebase.auth().currentUser;
-    updateVolunteer.add({
+
+    updateVolunteer.doc(user.uid).set({
         userDisplayName: user.displayName,
         userEmail: user.email,
-        userID: user.uid,
         updateAddress: address,
         updateCity: city,
         updateProv: prov,
         updateNumber: number,
-    }).then(function () {
+
+    }, {
+        merge: true
+    })
+    .then(function () {
         window.location.href = "volunteer-confirm.html";
     });
 }
+
+
 
 /**
  * Retrieves user input and updates volunteer profile.
@@ -54,7 +57,7 @@ function getInfo() {
         var updateProv = document.getElementById("province-input").value;
         var updateNumber = document.getElementById("number-input").value;
 
-        updateVolunteer(updateAddress,updateCity,updateProv,updateNumber);
+        updateVolunteer(updateAddress, updateCity, updateProv, updateNumber);
     });
 }
 getInfo();
