@@ -1,26 +1,106 @@
-//1) GET input values from user
-const inputThreadForm = document.querySelector('#threadForm');
-inputThreadForm.addEventListener('submit', (e) => {
-    e.preventDefault(); //This function will prevent the page from refreshing upon user hitting ENTER KEY upon input.
+//INITIAL SETUP: to update to same collection document:
+var ref = db.collection("my_collection").doc();
+var myId = ref.id;
 
-    //Upload into database (Post Collection)
-    db.collection('Post').add({
-        title: inputThreadForm['titleBox'].value,
-        body: inputThreadForm['textBody'].value,
-        tag: inputThreadForm['tagBox'].value,
-        date: jQuery.timeago(new Date()) //From Timeago plugin
+//Initial SETUP 2: creating a function to get username attribute of the current user:
+var uid;
+var username;
+
+function getUsername() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        user = firebase.auth().currentUser;
+        if(user) {
+            uid = user.uid;
+            console.log(uid); //Test if it works
+            db.collection('users').doc(uid).get()
+                .then(function(doc) {
+                    console.log(doc.data().username);
+                    updateUsernameToPost(doc.data().username);
+            })
+        } else {
+            console.log("Error in fetching user data!")
+        }
     })
-    .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-        inputThreadForm.reset();
-        window.location.replace("/Forum/Forum.html");
-    })
-    .catch((error) => {
-        console.error("Error adding document: ", error);
-    });
+};
+
+function updateUsernameToPost(usernameInput) {
+    db.collection('Post').doc(myId).set({
+        username: usernameInput},{
+            merge: true
+            }).then(() => {
+                console.log("Post sucessful!");
+            })
+};
+
+//1) USER INPUT FOR POSTS
+const postForm = document.querySelector('#createAPostForm');
+postForm.addEventListener('submit', (e) => {
+    e.preventDefault(); //This function will prevent the page from refreshing upon user hitting ENTER KEY upon input.
+    getUsername(); //Local invocation to assign username upon SUBMIT
+    
+    db.collection('Post').doc(myId).set({
+        title: postForm['titleBox'].value,
+        body: postForm['textBody'].value,
+        tag: postForm['tagBox'].value,
+        date: new Date().toISOString().slice(0, 10)},{ //Source from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+            merge: true
+            }).then(() => {
+                console.log("Post sucessful!");
+                alert("Post Sucessful! Returning to Social Hub.");
+                setTimeout(function(){
+                    window.location.replace("/Forum/Forum.html");
+                 }, 2000); //setTimeout to allow "buffer" time for functions above to complete.
+            })
 });
 
-/***********************************************************************************/
+//2) IF USER WANTS TO UPLOAD IMAGE WITH IT
+firebase.auth().onAuthStateChanged(function (user) {
+    user = firebase.auth().currentUser;
+    if (user != null) {
+        // User is signed in.
+        user.providerData.forEach(function () {});
+
+        function uploadUserProfilePic() {
+            // Let's assume my storage is only enabled for authenticated users 
+            // This is set in your firebase console storage "rules" tab
+            firebase.auth().onAuthStateChanged(function (user) {
+                var fileInput = document.getElementById("pictureButton"); // pointer #1
+                const image = document.getElementById("userImage"); // pointer #2
+                // listen for file selection
+                fileInput.addEventListener('change', function (e) {
+                    var file = e.target.files[0];
+                    var blob = URL.createObjectURL(file);
+                    //store using this name
+                    var storageRef = storage.ref("images/" + user.uid + ".jpg");
+                    //upload the picked file
+                    storageRef.put(file)
+                        .then(function () {
+                            console.log('Uploaded to Cloud Storage.');
+                        })
+                    //get the URL of stored file
+                    storageRef.getDownloadURL()
+                        .then(function (url) { // Get URL of the uploaded file
+                            console.log(url); // Save the URL into users collection
+                            db.collection('Post').doc(myId).set({
+                                "pictureURL": url},{
+                                    merge: true })
+                                .then(function () {
+                                    alert("Picture Sucessfully Uploaded!");
+                                    // window.location.replace("/Forum/Forum.html");
+                                }) .catch((error) => {
+                                    console.error("Error Uploading Image!", error);
+                                });
+                        })
+                })
+            })
+        }
+        uploadUserProfilePic();    
+    } else {
+        // No user is signed in.
+        console.warn("User is not logged in")
+    }
+})
+
 
 
 
