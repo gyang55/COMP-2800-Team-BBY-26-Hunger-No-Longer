@@ -2,7 +2,7 @@
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
     callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
@@ -19,27 +19,29 @@ var uiConfig = {
                 db.collection("users").doc(user.uid).set({ //write to firestore
                         name: user.displayName, //"users" collection
                         email: user.email //with authenticated user's ID (user.uid)
-                    }).then(function () {
-                            console.log("New user added to firestore");
-                            window.location.replace("/Landing/landing.html"); //re-direct to main.html after signup
-                        })
-                    .catch(function (error) {
+                    }).then(function() {
+                        console.log("New user added to firestore");
+                        window.location.replace("/Landing/landing.html"); //re-direct to main.html after signup
+                    })
+                    .catch(function(error) {
                         console.log("Error adding new user: " + error);
                     });
             } else {
+
                 return true;
             }
             return false;
         },
-        uiShown: function () {
+        uiShown: function() {
             // The widget is rendered.
             // Hide the loader.
             document.getElementById('loader').style.display = 'none';
         }
     },
+
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: '/individual.html', //Existing User Redirect HERE!
+    signInSuccessUrl: '../Guang_Yang_busiOwner/html/BusNews.html', //Existing User Redirect HERE!
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         //firebase.auth.GoogleAuthProvider.PROVIDER_ID,

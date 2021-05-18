@@ -1,8 +1,13 @@
 $(document).ready(function() {
 
+    /**Back to News Feed page after clicking on "News Feed" in sidebar */
+    $('#backHome').click(() => {
+        location.assign('./BusNews.html');
+    })
+
     //Click on plus icon to add another food input form
     $('#plus').click(() => {
-        $('form:first-of-type').clone(true).appendTo('.foodInput');
+        $('form:first-of-type').clone(true).appendTo('.newTitleContainer');
     })
 
     // Click on the camera icon and shows the popup
@@ -114,15 +119,15 @@ $(document).ready(function() {
      * @param title phone number of business
      * @param postDate phone number of business
      */
-    function updateBusinessNews(content, bestDate, title, img, postDate) {
+    function updateBusinessNews(content, bestDate, img, postDate, bname) {
         var updateBusinessNews = db.collection("BusinessNews");
-
         var user = firebase.auth().currentUser;
+        console.log(user);
         updateBusinessNews.add({
+            BusName: bname,
             UID: user.uid,
             Content: content,
             BestDate: bestDate,
-            Title: title,
             Image: img,
             PostDate: postDate,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -152,10 +157,15 @@ $(document).ready(function() {
 
             var content = foodArr;
             var bestDate = dateArr;
-            var title = $('#newsTitle').val();
             var img = dataURI;
+            var user = firebase.auth().currentUser;
+            console.log(user);
+            db.collection('Business').where('UID', '==', `${user.uid}`).get().then((snap) => {
+                snap.forEach(doc => {
+                    updateBusinessNews(content, bestDate, img, postDate, doc.data().bName);
+                })
+            })
 
-            updateBusinessNews(content, bestDate, title, img, postDate);
         });
     }
     getInfo();
