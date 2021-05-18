@@ -7,10 +7,26 @@ var map = new mapboxgl.Map({
     zoom: 13
 });
 
+
+// Initialize the geolocate control.
+var geolocate = new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+});
+
 // Add the control to the map.
 map.addControl(
+
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
+        mapboxgl: mapboxgl,
     })
 );
+map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}))
