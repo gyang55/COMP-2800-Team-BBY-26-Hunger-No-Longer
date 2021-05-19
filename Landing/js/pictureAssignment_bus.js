@@ -57,7 +57,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                     merge: true
                                 })
                                 .then(function() {
-                                    window.location.replace("/Guang_Yang_busiOwner/html/BusRegis.html");
+                                    window.location.replace("../Guang_Yang_busiOwner/html/BusRegis.html");
                                 })
                         })
                 })
