@@ -64,7 +64,8 @@ body {
     border: salmon solid;
 }
 
-.mapboxgl-canvas {
+
+/* .mapboxgl-canvas {
     width: 100% !important;
     height: 100% !important;
-}
+} */

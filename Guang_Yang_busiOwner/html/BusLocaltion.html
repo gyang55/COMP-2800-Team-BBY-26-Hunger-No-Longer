@@ -8,49 +8,31 @@
     <title>Hunger No Longer</title>
 
     <!--Favicon-->
-    <link rel="icon" type='image/png' href="../img/favicon-32x32.png">
+    <!-- <link rel="icon" type='image/png' href="../img/favicon-32x32.png"> -->
 
     <!--FontAwesome css-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
     <!--Boostrap css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
 
 
     <!--Mapbox css and js-->
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script> -->
 
     <!--Geocoder css and js-->
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <!--     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+ -->
 
-    <!-- Turf.js plugin -->
-    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 
     <!--Own css-->
     <link rel="stylesheet" type="text/css" href="../css/template.css" />
     <link rel="stylesheet" type="text/css" href="../css/BusLocation.css" />
 
-    <style>
-        .info-box {
-            position: absolute;
-            margin: 20px;
-            width: 25%;
-            top: 0;
-            bottom: 40%;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            overflow-y: scroll;
-            font-family: sans-serif;
-            font-size: 0.8em;
-            line-height: 2em;
-        }
-        
-        #info {
-            font-size: 16px;
-            font-weight: bold;
-        }
-    </style>
+
+
+
 </head>
 
 <body>
@@ -101,8 +83,6 @@
 
 
             <div id='map'></div>
-            <script>
-            </script>
 
 
             <!--Fixed footer starts-->
@@ -137,9 +117,15 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
 
+
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg&callback=initMap">
+</script>
+
 <!--Own JS-->
 <script src="../../private/firebase-api.js"></script>
 <script src="../js/slidingNav.js"></script>
-<script src="../js/BusLocation.js"></script>
 <script src="../js/sideBarUserInfo.js"></script>
 <script src="../js/HomeButton.js"></script>
+<script src="../js/BusLocation.js"></script>
+
+</script>

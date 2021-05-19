@@ -31,7 +31,7 @@ $(document).ready(function() {
      * @param zip post code of business
      * 
      */
-    function updateBusiness(busName, busPhone, address, city, state, zip) {
+    function updateBusiness(busName, busPhone, address, city, state, zip, lat, lng) {
         var updateBusiness = db.collection("Business");
 
         var user = firebase.auth().currentUser;
@@ -42,7 +42,9 @@ $(document).ready(function() {
             bphoneNo: busPhone,
             bState: state,
             bCity: city,
-            bZip: zip
+            bZip: zip,
+            latitude: lat,
+            longitude: lng
         }).then(function() {
             window.location.href = './BusRegisFeedBack.html';
         });
@@ -51,17 +53,42 @@ $(document).ready(function() {
     /**
      * Retrieves business form input and updates business profile.
      */
+    var latitude;
+    var longitude;
+    var busName;
+    var busPhone;
+    var address;
+    var city;
+    var state;
+    var zip
+
     function getInfo() {
         $("#submit").click(function() {
-            var busName = $("#busname").val();
-            var busPhone = $("#phone").val();
-            var address = $("#inputAddress").val() + ", " + $("#inputAddress2").val();
-            var city = $("#inputCity").val();
-            var state = $("#inputState").val();
-            var zip = $("#inputZip    ").val();
-
-            updateBusiness(busName, busPhone, address, city, state, zip);
+            busName = $("#busname").val();
+            busPhone = $("#phone").val();
+            address = $("#inputAddress").val() + ", " + $("#inputAddress2").val();
+            city = $("#inputCity").val();
+            state = $("#inputState").val();
+            zip = $("#inputZip").val();
+            getCoordinates(address)
         });
     }
     getInfo();
+
+    function getCoordinates(addre) {
+        fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + addre + '&key=' + 'AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                latitude = data.results[0].geometry.location.lat;
+                longitude = data.results[0].geometry.location.lng;
+                console.log({
+                    latitude,
+                    longitude
+                })
+            }).then(() => {
+                updateBusiness(busName, busPhone, address, city, state, zip, latitude, longitude);
+            })
+    }
+
 });
