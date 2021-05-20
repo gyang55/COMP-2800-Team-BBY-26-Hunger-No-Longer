@@ -12,6 +12,5 @@ $(function() {
         .addHook(function() {
             jQuery('#egg').show();
             console.log("Hook called for: " + this.activeEgg.keys);
-            console.log(this.activeEgg);
         }).listen();
 })
