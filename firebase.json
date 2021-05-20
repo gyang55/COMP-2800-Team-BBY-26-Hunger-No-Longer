@@ -4,13 +4,21 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "getStarted/landing.html",
+    "public": "/",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ]
   },
+  "redirects":[ 
+    {
+      "source": "/",
+      "destination": "getStarted/landing.html",
+      "type": 301
+    }
+  ]
+  ,
   "storage": {
     "rules": "storage.rules"
   }
