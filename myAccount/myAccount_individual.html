@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger No Longer: Create A Post</title>
-    <link rel="stylesheet" type="text/css" href="/Forum/css/createAPost.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Hunger No Longer: My Account</title>
+    <link rel="stylesheet" type="text/css" href="/myAccount/css/myAccountStyle.css"/>
     <link rel="icon" href="/favicon/favicon-32x32.png">
+    <style>
+        #mySidenavContainer > #profileBackground {
+            display: grid;
+            grid-template-rows: auto;
+            background-size: cover;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <!--********* NAV BAR START ***********-->
@@ -19,7 +26,7 @@
             </div>
             <div id="mySidenavContents">
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
+                <a href="/myAccount/myAccount_individual.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>Place Order</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
@@ -37,61 +44,64 @@
                         <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
                     </div>
                     <div id="title">
-                        <span id="title-font">CREATE A POST</span>
+                        <span id="title-font">MY ACCOUNT</span>
                     </div>
-                    <div id="cameraButtonContainer">
-                        <div id="cameraButton" class="file">
-                            <img id="actualCameraButton" src="https://img.icons8.com/officexs/38/000000/add-camera.png">
-                            <input type="file" name="uploadfile" id="pictureButton" style="display:none;" onclick="uploadUserProfilePic()"/>
+                    <div id="homeButtonContainer">
+                        <div id="homeButton">
+                            <img id="actualHomeButton" src="https://img.icons8.com/material/42/000000/home--v5.png">
                         </div>
                     </div>
                 </div>
 
-                <!-- POST FORM CONTAINER (POSTS to Database)-->
-                <form id="createAPostForm">
-                    <div id="postContainer">
-                        <div id="feed">    
-                            <input type="text" id="titleBox" name="search" placeholder="Enter Title..." required>        
-                        </div>
-                        <div id="feed"> 
-                            <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
-                            <textarea name="the-textarea" type="text" id="textBody" maxlength="2000" placeholder="Enter Text..."autofocus required></textarea>
-                            <div id="the-count">
-                            <span id="current">0</span>
-                            <span id="maximum">/ 2000</span>
-                            </div>
-                        </div>
-                        <div id="feed">
-                            <input type="text" id="tagBox" name="search" placeholder="Enter Tag..." required>
-                        </div>
+            <!-- PROFILE CARD BOOTSTRAP FROM: https://bootsnipp.com/snippets/xpyz9 -->
+                <div id="feedContainer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                    
+                                <div class="card hovercard">
+                                    <div class="cardheader">
+                                    </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 12pt; color: black;">
-                            <div class="modal-dialog">
-                            
-                                <!-- Modal content-->
-                                <div class="modal-content" keyboard="true">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Submitting Your Post?</h4>
+                                     <!-- START INSERT FROM SERVER -->
+                                    <div id="profileContainer">
+                                        <div class="avatar">
+                                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100px" height="100px">
+                                        </div>
+                                        <div class="info">
+                                            <div class="title">
+                                                <span id="nameTitleSpot"><b>Hunger No Longer</b></span>
+                                                <br>
+                                                <span id="usernameSpot">@Username</span>
+                                            </div>
+                                            <div class="desc">Hunger No Longer User Description Here!</div>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <p>Please review your post before submitting to Social Hub.<br><br>You can edit it if you need to change something.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" id="editButton" data-dismiss="modal">Edit</button>
-                                        <button type="submit" class="btn btn-default" id="submitButton"><a href="#" style="color: white;">Submit</a></button></a>
-                                    </div> 
+                                    <!-- END OF INSERT FROM SERVER -->
+
+                                    <!-- FORM HERE -->
+                                    <form id="userInput">
+                                        <div class="bottom">
+                                            <div id="buttonContainer">
+                                                <div id="postButton" onclick="redirectToEditProfile()">
+                                                    <span id="postButtonFont">EDIT PROFILE</span>
+                                                </div>
+                                                <div>
+                                                    <label id="uploadCameraButton" class="btn btn-default" id="pictureButton" for="pictureButton"><span id="uploadCameraButtonFont">CHANGE PHOTO</span></label>
+                                                    <input type="file" name="uploadfile" id="pictureButton" style="display:none;"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- END OF FORM -->
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     </div>
-                </form>
-                
-                <div id="adSpaceContainer"></div>
+                </div>
+
+            <!-- END OF BOOTSTRAP -->
                 <div id="lowerNavContainer">
-                    <div id="postButton" data-toggle="modal" data-target="#myModal">
-                        <span id="postButtonFont">SUBMIT</span>
-                    </div>
                 </div>
         </div>
     </div>
@@ -118,20 +128,16 @@
 <!-- JS files: Your own JavaScript functions included here    -->
 <!--------------------------------------------------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="js/slidingNav.js"></script> 
-<script src="js/createAPostText.js"></script> 
+<script src="/Forum/js/slidingNav.js"></script>
 <script src="/private/firebase-api.js"></script>
 <script src="/private/firebase-logout.js"></script>
 <script src="/Forum/js/redirectAuth.js"></script>
-<script src="js/postInput.js"></script> 
-<script src="/Forum/js/getUserProfileNav.js"></script>
+<script src="/myAccount/js/getUserProfile.js"></script>
+<script src="/myAccount/js/changePhoto.js"></script>
 
-<!-- SCRIPT for linking File Upload Button to Image: -->
+<!-- JS Script to redirect users to "Edit Profile" upon button click -->
 <script>
-    $(document).ready(function() {
-        //To link picture to Add File button:
-        $("#actualCameraButton").click(function () {
-            $("#pictureButton").trigger('click');
-        });
-    });
+    function redirectToEditProfile() {  
+        window.location.href = "/myAccount/myAccountIndividual_edit.html";
+    };
 </script>
