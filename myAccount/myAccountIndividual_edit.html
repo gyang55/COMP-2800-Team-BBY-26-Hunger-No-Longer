@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger No Longer: Social Hub</title>
-    <link rel="stylesheet" type="text/css" href="css/originalWebsiteStyle.css"/>
+    <title>Hunger No Longer: Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="/myAccount/css/myAccount_editStyle.css"/>
     <link rel="icon" href="/favicon/favicon-32x32.png">
     <style>
         #mySidenavContainer > #profileBackground {
@@ -44,7 +44,7 @@
                         <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
                     </div>
                     <div id="title">
-                        <span id="title-font">SOCIAL HUB</span>
+                        <span id="title-font">MY ACCOUNT</span>
                     </div>
                     <div id="homeButtonContainer">
                         <div id="homeButton">
@@ -53,25 +53,68 @@
                     </div>
                 </div>
 
+            <!-- PROFILE CARD BOOTSTRAP FROM: https://bootsnipp.com/snippets/xpyz9 -->
                 <div id="feedContainer">
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                </div>
-                
-                <div id="adSpaceContainer">
-                    AD SPACE HERE
-                </div>
-                <div id="lowerNavContainer">
-                    <a href="createAPost.html">
-                        <div id="postButton">
-                            <span id="postButtonFont">POST</span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                    
+                                <div class="card hovercard">
+                                    <div class="cardheader">
+                                    </div>
+
+                                     <!-- START INSERT FROM SERVER -->
+                                    <div id="profileContainer">
+                                        <div class="avatar">
+                                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100px" height="100px">
+                                        </div>
+                                        <div class="info">
+                                            <div class="title">
+                                                <span id="nameTitleSpot"><b>Hunger No Longer</b></span>
+                                                <br>
+                                                <span id="usernameSpot">@Username</span>
+                                            </div>
+                                            <div class="desc">Description Here!</div>
+                                        </div>
+                                    </div>
+                                    <!-- END OF INSERT FROM SERVER -->
+
+                                    <!-- FORM HERE -->
+                                    <form id="userInputForm">
+                                        <div class="bottom">
+                                            <div id="fieldContainer">
+                                                <div class="form__group">
+                                                    <input type="text" class="form__input" id="usernameBox" placeholder="Enter New Username" required="" />
+                                                    <label for="name" class="form__label">Your New Username</label>
+                                                </div>
+                                                <div class="form__group">
+                                                    <input type="email" class="form__input" id="emailBox" placeholder="Enter New Email" required="" />
+                                                    <label for="name" class="form__label">Your New Email</label>
+                                                </div>
+                                                <div id="userBio">
+                                                    <textarea name="the-textarea" type="text" id="userBioBox" maxlength="100" placeholder="Describe Yourself..."autofocus required></textarea>
+                                                    <div id="the-count">
+                                                        <span id="current">0</span>
+                                                        <span id="maximum">/ 100</span>
+                                                    </div>
+                                                </div>
+                                             <!-- Button -->
+                                                <div id="submitButtonContainer">
+                                                    <button type="submit" class="btn btn-default" id="submitButton">SAVE CHANGES</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- END OF FORM -->
+                                </div>
+                    
+                            </div>
                         </div>
-                    </a>
+                    </div>
+                </div>
+
+            <!-- END OF BOOTSTRAP -->
+                <div id="lowerNavContainer">
                 </div>
         </div>
     </div>
@@ -98,9 +141,21 @@
 <!-- JS files: Your own JavaScript functions included here    -->
 <!--------------------------------------------------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="js/slidingNav.js"></script>
+<script src="/Forum/js/slidingNav.js"></script>
 <script src="/private/firebase-api.js"></script>
 <script src="/private/firebase-logout.js"></script>
 <script src="/Forum/js/redirectAuth.js"></script>
-<script src="/Forum/js/getUserProfileNav.js"></script>
-<script src="/Forum/js/getPosts.js"></script>
+<script src="/myAccount/js/userBioText.js"></script>
+<script src="/myAccount/js/getUserProfile.js"></script>
+<script src="/myAccount/js/editProfileForm_individual.js"></script>
+
+<!-- SCRIPT for linking File Upload Button to Image: -->
+<script>
+    $(document).ready(function() {
+        //To link picture to Add File button:
+        $("#actualCameraButton").click(function () {
+            $("#pictureButton").trigger('click');
+        });
+    });
+</script>
+

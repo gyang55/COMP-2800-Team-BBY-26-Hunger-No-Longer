@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger No Longer: Social Hub</title>
-    <link rel="stylesheet" type="text/css" href="css/originalWebsiteStyle.css"/>
+    <title>Hunger No Longer: My Account</title>
+    <link rel="stylesheet" type="text/css" href="/myAccount/css/myAccountStyle.css"/>
     <link rel="icon" href="/favicon/favicon-32x32.png">
     <style>
         #mySidenavContainer > #profileBackground {
@@ -44,7 +44,7 @@
                         <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
                     </div>
                     <div id="title">
-                        <span id="title-font">SOCIAL HUB</span>
+                        <span id="title-font">MY ACCOUNT</span>
                     </div>
                     <div id="homeButtonContainer">
                         <div id="homeButton">
@@ -53,25 +53,55 @@
                     </div>
                 </div>
 
+            <!-- PROFILE CARD BOOTSTRAP FROM: https://bootsnipp.com/snippets/xpyz9 -->
                 <div id="feedContainer">
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
-                    <!-- INSERT SERVER THINGS HERE!!! -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                    
+                                <div class="card hovercard">
+                                    <div class="cardheader">
+                                    </div>
+
+                                     <!-- START INSERT FROM SERVER -->
+                                    <div id="profileContainer">
+                                        <div class="avatar">
+                                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="100px" height="100px">
+                                        </div>
+                                        <div class="info">
+                                            <div class="title">
+                                                <span id="nameTitleSpot"><b>Hunger No Longer</b></span>
+                                                <br>
+                                                <span id="usernameSpot">@Username</span>
+                                            </div>
+                                            <div class="desc">Hunger No Longer User Description Here!</div>
+                                        </div>
+                                    </div>
+                                    <!-- END OF INSERT FROM SERVER -->
+
+                                    <!-- FORM HERE -->
+                                    <form id="userInput">
+                                        <div class="bottom">
+                                            <div id="buttonContainer">
+                                                <div id="postButton" onclick="redirectToEditProfile()">
+                                                    <span id="postButtonFont">EDIT PROFILE</span>
+                                                </div>
+                                                <div>
+                                                    <label id="uploadCameraButton" class="btn btn-default" id="pictureButton" for="pictureButton"><span id="uploadCameraButtonFont">CHANGE PHOTO</span></label>
+                                                    <input type="file" name="uploadfile" id="pictureButton" style="display:none;"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- END OF FORM -->
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
                 </div>
-                
-                <div id="adSpaceContainer">
-                    AD SPACE HERE
-                </div>
+
+            <!-- END OF BOOTSTRAP -->
                 <div id="lowerNavContainer">
-                    <a href="createAPost.html">
-                        <div id="postButton">
-                            <span id="postButtonFont">POST</span>
-                        </div>
-                    </a>
                 </div>
         </div>
     </div>
@@ -98,9 +128,16 @@
 <!-- JS files: Your own JavaScript functions included here    -->
 <!--------------------------------------------------------------------->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="js/slidingNav.js"></script>
+<script src="/Forum/js/slidingNav.js"></script>
 <script src="/private/firebase-api.js"></script>
 <script src="/private/firebase-logout.js"></script>
 <script src="/Forum/js/redirectAuth.js"></script>
-<script src="/Forum/js/getUserProfileNav.js"></script>
-<script src="/Forum/js/getPosts.js"></script>
+<script src="/myAccount/js/getUserProfile.js"></script>
+<script src="/myAccount/js/changePhoto.js"></script>
+
+<!-- JS Script to redirect users to "Edit Profile" upon button click -->
+<script>
+    function redirectToEditProfile() {  
+        window.location.href = "/myAccount/myAccountIndividual_edit.html";
+    };
+</script>
