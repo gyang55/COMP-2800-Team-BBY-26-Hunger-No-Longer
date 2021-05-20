@@ -36,6 +36,8 @@ function updateVolunteer(address,city,prov,number) {
         updateCity: city,
         updateProv: prov,
         updateNumber: number,
+        date: Date.now()
+
 
     }, {
         merge: true
