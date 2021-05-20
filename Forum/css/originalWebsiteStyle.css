@@ -238,14 +238,7 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 900;
     color: black;
-    overflow: auto;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-}
-
-#feedTitle::-webkit-scrollbar {
-    display: none;
+    overflow: hidden;
 }
 
 #feedTitle > p {

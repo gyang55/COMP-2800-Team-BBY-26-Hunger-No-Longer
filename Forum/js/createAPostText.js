@@ -8,25 +8,24 @@ $('textarea').keyup(function() {
       
     current.text(characterCount);
    
-    
     /*This isn't entirely necessary, just playin around*/
     if (characterCount < 70) {
       current.css('color', '#666');
     }
-    if (characterCount > 70 && characterCount < 90) {
+    if (characterCount > 250 && characterCount < 500) {
       current.css('color', '#6d5555');
     }
-    if (characterCount > 90 && characterCount < 100) {
+    if (characterCount > 500 && characterCount < 750) {
       current.css('color', '#793535');
     }
-    if (characterCount > 100 && characterCount < 120) {
+    if (characterCount > 750 && characterCount < 1000) {
       current.css('color', '#841c1c');
     }
-    if (characterCount > 120 && characterCount < 139) {
+    if (characterCount > 1000 && characterCount < 1500) {
       current.css('color', '#8f0001');
     }
     
-    if (characterCount >= 140) {
+    if (characterCount >= 1500) {
       maximum.css('color', '#8f0001');
       current.css('color', '#8f0001');
       theCount.css('font-weight','bold');

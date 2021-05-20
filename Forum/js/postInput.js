@@ -54,16 +54,9 @@ postForm.addEventListener('submit', (e) => {
 });
 
 //2) IF USER WANTS TO UPLOAD IMAGE WITH IT
-firebase.auth().onAuthStateChanged(function (user) {
-    user = firebase.auth().currentUser;
-    if (user != null) {
-        // User is signed in.
-        user.providerData.forEach(function () {});
-
         function uploadUserProfilePic() {
             // Let's assume my storage is only enabled for authenticated users 
             // This is set in your firebase console storage "rules" tab
-            firebase.auth().onAuthStateChanged(function (user) {
                 var fileInput = document.getElementById("pictureButton"); // pointer #1
                 const image = document.getElementById("userImage"); // pointer #2
                 // listen for file selection
@@ -71,36 +64,28 @@ firebase.auth().onAuthStateChanged(function (user) {
                     var file = e.target.files[0];
                     var blob = URL.createObjectURL(file);
                     //store using this name
-                    var storageRef = storage.ref("images/" + user.uid + ".jpg");
+                    var storageRef = storage.ref("Post/" + myId + ".jpg");
                     //upload the picked file
                     storageRef.put(file)
                         .then(function () {
-                            console.log('Uploaded to Cloud Storage.');
-                        })
-                    //get the URL of stored file
-                    storageRef.getDownloadURL()
-                        .then(function (url) { // Get URL of the uploaded file
-                            console.log(url); // Save the URL into users collection
-                            db.collection('Post').doc(myId).set({
-                                "pictureURL": url},{
-                                    merge: true })
-                                .then(function () {
-                                    alert("Picture Sucessfully Uploaded!");
-                                    // window.location.replace("/Forum/Forum.html");
-                                }) .catch((error) => {
-                                    console.error("Error Uploading Image!", error);
-                                });
+                            //get the URL of stored file
+                            storageRef.getDownloadURL()
+                                .then(function (url) { 
+                                    db.collection('Post').doc(myId).set({
+                                        "pictureURL": url},{
+                                            merge: true })
+                                        .then(function () {
+                                            alert("Picture Sucessfully Uploaded!");
+                                            // window.location.replace("/Forum/Forum.html");
+                                        }) .catch((error) => {
+                                                console.error("Error Uploading Image!", error);
+                                        });
+                                })
                         })
                 })
-            })
         }
-        uploadUserProfilePic();    
-    } else {
-        // No user is signed in.
-        console.warn("User is not logged in")
-    }
-})
 
+    
 
 
 

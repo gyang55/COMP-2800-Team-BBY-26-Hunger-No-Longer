@@ -42,7 +42,7 @@
                     <div id="cameraButtonContainer">
                         <div id="cameraButton" class="file">
                             <img id="actualCameraButton" src="https://img.icons8.com/officexs/38/000000/add-camera.png">
-                            <input type="file" name="uploadfile" id="pictureButton" style="display:none;"/>
+                            <input type="file" name="uploadfile" id="pictureButton" style="display:none;" onclick="uploadUserProfilePic()"/>
                         </div>
                     </div>
                 </div>
@@ -55,10 +55,10 @@
                         </div>
                         <div id="feed"> 
                             <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
-                            <textarea name="the-textarea" type="text" id="textBody" maxlength="500" placeholder="Enter Text..."autofocus required></textarea>
+                            <textarea name="the-textarea" type="text" id="textBody" maxlength="2000" placeholder="Enter Text..."autofocus required></textarea>
                             <div id="the-count">
                             <span id="current">0</span>
-                            <span id="maximum">/ 500</span>
+                            <span id="maximum">/ 2000</span>
                             </div>
                         </div>
                         <div id="feed">
@@ -124,7 +124,7 @@
 <script src="/private/firebase-logout.js"></script>
 <script src="/Forum/js/redirectAuth.js"></script>
 <script src="js/postInput.js"></script> 
-<script src="/Forum/js/getUserProfile.js"></script>
+<script src="/Forum/js/getUserProfileNav.js"></script>
 
 <!-- SCRIPT for linking File Upload Button to Image: -->
 <script>
