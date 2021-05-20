@@ -11,13 +11,19 @@
 //     });
 // })
 
+$(function() {
+    $(sideLogOut).on('click', () => {
+        logOut();
+    })
+})
+
+// Logout function
 function logOut() {
     firebase.auth().signOut()
-        .then(function () {
+        .then(function() {
             window.location.href = "/index.html";
         })
-        .catch(function (error) {
+        .catch(function(error) {
             // An error happened
         });
 }
-

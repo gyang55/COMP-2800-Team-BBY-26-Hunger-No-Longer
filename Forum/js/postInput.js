@@ -1,41 +1,91 @@
-'use strict'
+//INITIAL SETUP: to update to same collection document:
+var ref = db.collection("my_collection").doc();
+var myId = ref.id;
 
-//1) For Thread Title:
-const inputTitleForm = document.querySelector('#inputTitleForm');
-inputTitleForm.addEventListener('input', (e) => {
+//Initial SETUP 2: creating a function to get username attribute of the current user:
+var uid;
+var username;
+
+function getUsername() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        user = firebase.auth().currentUser;
+        if(user) {
+            uid = user.uid;
+            console.log(uid); //Test if it works
+            db.collection('users').doc(uid).get()
+                .then(function(doc) {
+                    console.log(doc.data().username);
+                    updateUsernameToPost(doc.data().username);
+            })
+        } else {
+            console.log("Error in fetching user data!")
+        }
+    })
+};
+
+function updateUsernameToPost(usernameInput) {
+    db.collection('Post').doc(myId).set({
+        username: usernameInput},{
+            merge: true
+            }).then(() => {
+                console.log("Post sucessful!");
+            })
+};
+
+//1) USER INPUT FOR POSTS
+const postForm = document.querySelector('#createAPostForm');
+postForm.addEventListener('submit', (e) => {
     e.preventDefault(); //This function will prevent the page from refreshing upon user hitting ENTER KEY upon input.
-
-    //Get Post Title
-    const title = inputTitleForm['titleBox'].value;
-    console.log(title);
-});
-
-/***********************************************************************************/
-
-
-//2) For Thread Body
-const inputBodyText = document.querySelector("#inputBodyTextForm");
-inputBodyText.addEventListener('input', (e) => {
-    e.preventDefault();
+    getUsername(); //Local invocation to assign username upon SUBMIT
     
-    //Get textArea stuff
-    const bodyText = inputBodyText['textBody'].value;
-    console.log(bodyText);
+    db.collection('Post').doc(myId).set({
+        title: postForm['titleBox'].value,
+        body: postForm['textBody'].value,
+        tag: postForm['tagBox'].value,
+        date: new Date().toISOString().slice(0, 10)},{ //Source from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+            merge: true
+            }).then(() => {
+                console.log("Post sucessful!");
+                alert("Post Sucessful! Returning to Social Hub.");
+                setTimeout(function(){
+                    window.location.replace("/Forum/Forum.html");
+                 }, 2000); //setTimeout to allow "buffer" time for functions above to complete.
+            })
 });
 
+//2) IF USER WANTS TO UPLOAD IMAGE WITH IT
+        function uploadUserProfilePic() {
+            // Let's assume my storage is only enabled for authenticated users 
+            // This is set in your firebase console storage "rules" tab
+                var fileInput = document.getElementById("pictureButton"); // pointer #1
+                const image = document.getElementById("userImage"); // pointer #2
+                // listen for file selection
+                fileInput.addEventListener('change', function (e) {
+                    var file = e.target.files[0];
+                    var blob = URL.createObjectURL(file);
+                    //store using this name
+                    var storageRef = storage.ref("Post/" + myId + ".jpg");
+                    //upload the picked file
+                    storageRef.put(file)
+                        .then(function () {
+                            //get the URL of stored file
+                            storageRef.getDownloadURL()
+                                .then(function (url) { 
+                                    db.collection('Post').doc(myId).set({
+                                        "pictureURL": url},{
+                                            merge: true })
+                                        .then(function () {
+                                            alert("Picture Sucessfully Uploaded!");
+                                            // window.location.replace("/Forum/Forum.html");
+                                        }) .catch((error) => {
+                                                console.error("Error Uploading Image!", error);
+                                        });
+                                })
+                        })
+                })
+        }
 
-/***********************************************************************************/
+    
 
-//3) For Tags
-const inputTag = document.querySelector("#inputTagForm");
-inputTag.addEventListener('input', (e) => {
-    e.preventDefault();
-
-    //Get textArea stuff
-    const userInputTag = inputTag['tagBox'].value;
-    console.log(userInputTag);
-});
-
-// 4) Upload Thread Attributes to FireBase
 
 
