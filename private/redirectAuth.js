@@ -4,7 +4,7 @@ auth.onAuthStateChanged(user => {
         //Do nothing
     } else {
         console.log("You are not logged in!") //Kicks them back out.
-        window.location.href = "/index.html"; //REDIRECTS THEM AFTER LOGGING IN TO SPECIFIED PAGE (please change to home.html)
+        window.location.href = "/getStarted/landing.html"; //REDIRECTS THEM AFTER LOGGING IN TO SPECIFIED PAGE (please change to home.html)
     }
 })
 
