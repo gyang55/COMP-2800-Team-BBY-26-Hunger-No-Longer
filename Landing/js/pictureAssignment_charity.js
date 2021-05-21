@@ -57,7 +57,7 @@ optionalButton.addEventListener('click', (e) => {
                                     merge: true
                                 })
                                 .then(function () {
-                                    window.location.replace("/Forum/Forum.html");
+                                    window.location.replace("/Guang_Yang_busiOwner/html/BusNews.html");
                                 })
                         })
                 })
