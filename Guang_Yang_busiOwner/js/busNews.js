@@ -133,8 +133,10 @@ $(document).ready(function() {
             $(this).text('read more');
         }
     })
-
-    // Users will go to BusNewsPost page after clicking on post news button in side bar 
+    $("#map").click(function() {
+            location.hre = './BusLocation.html'
+        })
+        // Users will go to BusNewsPost page after clicking on post news button in side bar 
     $('#sidePostNews').click(() => {
 
         window.location.href = './BusNewsPost.html';
