@@ -209,6 +209,10 @@ body {
     border: 1px solid rgb(107, 107, 107);
 }
 
+#feed:hover {
+    cursor: pointer;
+}
+
 #dateAndUserContainer {
     display: grid;
     grid-template-columns: 130px auto auto;

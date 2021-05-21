@@ -25,10 +25,10 @@
                 <!-- END OF INSERT FROM SERVER -->
             </div>
             <div id="mySidenavContents">
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
+                <a href="/Guang_Yang_busiOwner/html/BusNews.html"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
                 <a href="/myAccount/myAccount_individual.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>Place Order</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
+                <a href="/volunteer/volunteer.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
                 <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
                 <a href="/Forum/Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a>
                 <a href="/AboutUs/aboutUs.html"><img id="menuIcon" src="https://img.icons8.com/doodle/27/000000/employee-card--v1.png"/><b>About Us</b></a>
@@ -67,11 +67,9 @@
                     AD SPACE HERE
                 </div>
                 <div id="lowerNavContainer">
-                    <a href="createAPost.html">
-                        <div id="postButton">
-                            <span id="postButtonFont">POST</span>
-                        </div>
-                    </a>
+                    <div id="postButton">
+                        <span id="postButtonFont">POST</span>
+                    </div>
                 </div>
         </div>
     </div>
@@ -104,3 +102,11 @@
 <script src="/Forum/js/redirectAuth.js"></script>
 <script src="/Forum/js/getUserProfileNav.js"></script>
 <script src="/Forum/js/getPosts.js"></script>
+
+<!-- SCRIPT FOR REDIRECT to CreateAPost.html -->
+<script>
+    document.getElementById("postButton")
+        .addEventListener('click', function() {
+            window.location.href = "/Forum/createAPost.html";
+        });
+</script>
