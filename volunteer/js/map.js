@@ -63,11 +63,55 @@ function getLocation() {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-
+// Gets user Position from browser.
 function showPosition(position) {
   //x.innerHTML = "Latitude: " + position.coords.latitude +
   //"<br>Longitude: " + position.coords.longitude;
-  console.log(position.coords.latitude );
-  console.log(position.coords.longitude)
+  userPositionLat = position.coords.latitude;
+  userPositionLong = position.coords.longitude;
 }
-// Write to Firebase Latitude & Longitude, 
+
+// Write to Firebase Latitude & Longitude, global variables shown below.
+var userPositionLat;
+var userPositionLong;
+
+/* function updatePosition(lat,long) {
+  var updatePosition = db.collection("user");
+  var user = firebase.auth().currentUser;
+
+  updatePosition.doc(user.uid).add({
+        latitude = lat,
+        longitude = long
+  }, {
+      merge: true
+  })
+  .then(function () {
+      window.location.href = "volunteer-confirm.html";
+  });
+} */
+
+function getInfo() {
+  $("#submit").click(function() {
+      showPosition(position)
+  });
+}
+getInfo();
+
+
+/* function getCoordinates(position) {
+  fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + position + '&key=' + 'AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg')
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+          latitude = data.results[0].geometry.location.lat;
+          longitude = data.results[0].geometry.location.lng;
+          console.log({
+              latitude,
+              longitude
+          })
+      }).then(() => {
+          updateBusiness(busName, busPhone, address, city, state, zip, latitude, longitude);
+      })
+}
+
+}); */
