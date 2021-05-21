@@ -71,6 +71,26 @@
 
 
             <div id='map'></div>
+            <div class="container disInfo">
+                <div class="row justify-content-center input">
+                    <div class="col-2">
+                        <label for="from"><i class="fas fa-location-arrow"></i></label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" id="from" placeholder="Origin">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <label for="to"><i class="fas fa-search-location"></i></label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" id="to" placeholder="Destination">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info" onclick="calcRoute()">Go</button>
+                <div id="output"></div>
+            </div>
             <scrip>
                 </script>
 
@@ -106,8 +126,10 @@
 <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg&callback=initMap">
-</script>
+<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg&callback=initMap">
+</script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg
+    &libraries=places"></script>
 
 <!--Own JS-->
 <script src="../../private/firebase-api.js"></script>

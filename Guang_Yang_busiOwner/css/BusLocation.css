@@ -1,63 +1,8 @@
-/* Search bar */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-body {
-    background: #f2f2f2;
-    font-family: 'Open Sans', sans-serif;
-}
-
-
-/* .search {
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-.searchTerm {
-    width: 100%;
-    border: 3px solid salmon;
-    padding: 5px;
-    height: 30px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
-}
-
-.searchTerm:focus {
-    color: salmon;
-}
-
-.searchButton {
-    width: 40px;
-    height: 30px;
-    border: 1px solid salmon;
-    background: salmon;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-} */
-
-
-/*Resize the wrap to see the search bar change!*/
-
-
-/* .wrap {
-    width: 80%;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
- */
-
-
 /* Map */
 
 #map {
     width: 100% !important;
-    height: 500px !important;
+    height: 300px !important;
     position: absolute;
     top: 80px;
     margin: 0 px;
@@ -65,7 +10,41 @@ body {
 }
 
 
-/* .mapboxgl-canvas {
-    width: 100% !important;
-    height: 100% !important;
-} */
+/*Location button*/
+
+#locationB {
+    width: 20px;
+    height: 20px;
+    top: 60px !important;
+    left: 370px !important;
+}
+
+
+/* Form of distance information*/
+
+.disInfo {
+    position: absolute;
+    top: 400px;
+}
+
+.col-4 {
+    text-align: right;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+input {
+    border: 0.5px solid;
+}
+
+.btn-info {
+    margin-top: 20px;
+    margin-left: 175px;
+}
+
+#output {
+    width: 400px;
+    height: 100px;
+}
