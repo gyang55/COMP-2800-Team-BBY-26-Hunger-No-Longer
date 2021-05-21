@@ -59,7 +59,7 @@ checkboxes.forEach(function(checkbox) {
     var updateVolunteer = db.collection("volunteer");
     var user = firebase.auth().currentUser;
 
-    updateVolunteer.doc(user.uid).update({
+    updateVolunteer.doc(user.uid).set({
         userDisplayName: user.displayName,
         userEmail: user.email,
         updateAddress: address,
