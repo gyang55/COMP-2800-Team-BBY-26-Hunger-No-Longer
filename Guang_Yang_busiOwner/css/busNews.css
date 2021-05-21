@@ -1,4 +1,5 @@
 /* The banner*/
+
 .banner {
     position: fixed;
     top: 70px;
@@ -95,3 +96,9 @@ button {
     display: none;
 }
 
+
+/*footer*/
+
+#footer {
+    background-color: salmon !important;
+}

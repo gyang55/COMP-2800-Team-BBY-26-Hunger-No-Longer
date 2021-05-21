@@ -12,7 +12,7 @@
 // })
 
 $(function() {
-    $(sideLogOut).on('click', () => {
+    $('#sideLogOut').on('click', () => {
         logOut();
     })
 })

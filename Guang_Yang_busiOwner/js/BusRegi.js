@@ -3,14 +3,14 @@
  * 
  * */
 $(document).ready(function() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    /* firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             loggedInUser = user;
         } else {
             console.warn("No user detected!");
-            window.location.href = "index.html";
+            window.location.href = "../../index.html";
         }
-    });
+    }); */
 
 
     /**

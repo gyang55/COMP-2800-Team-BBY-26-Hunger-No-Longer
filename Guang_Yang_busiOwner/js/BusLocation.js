@@ -1,36 +1,4 @@
-/**Initialize the map with starting point at BCIT burnaby */
-/* mapboxgl.accessToken = 'pk.eyJ1Ijoicm9ja3JvbGFuZCIsImEiOiJja29uaG02Y2MwMWswMnZwaWJnYTQ0enlxIn0.GlQoTbJgVw3Kn7vI3Ua_Pg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-123.0014, 49.2516],
-    zoom: 13
-}); */
-
-
-// Initialize the geolocate control.
-/* var geolocate = new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-});
- */
-// Add the control to the map.
-/* map.addControl(
-
-    new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-    })
-);
-map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-})) */
-
+let map, infoWindow;
 
 function initMap() {
     // Map options
@@ -45,6 +13,51 @@ function initMap() {
     // New map
     map = new google.maps.Map(document.getElementById('map'), options);
 
+    // Create a button to locate the users
+    infoWindow = new google.maps.InfoWindow();
+    const locationButton = document.createElement("button");
+    locationButton.textContent = "My location";
+    locationButton.classList.add("custom-map-control-button");
+
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    // Click to locate users
+    locationButton.addEventListener("click", () => {
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent("Location found.");
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                },
+                () => {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                }
+            );
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    });
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+            browserHasGeolocation ?
+            "Error: The Geolocation service failed." :
+            "Error: Your browser doesn't support geolocation."
+        );
+        infoWindow.open(map);
+    }
+
+
+
+
     // Listen for click on map location
     google.maps.event.addListener(map, "click", (event) => {
         // add Marker
@@ -53,8 +66,30 @@ function initMap() {
         });
     })
 
+    let markerArray = [];
+    db.collection('Business')
+        .get()
+        .then((snap) => {
+            snap.forEach(doc => {
+
+                console.log(doc.data().longitude + " " + doc.data().latitude);
+                let location = {};
+                location.lat = doc.data().latitude;
+                location.lng = doc.data().longitude;
+                let content = `<h2>${doc.data().bName}</h2>`
+                let objGeo = {};
+                objGeo.location = location;
+                objGeo.content = content;
+                markerArray.push(objGeo);
+                console.log(markerArray);
+                for (let i = 0; i < markerArray.length; i++) {
+                    addMarker(markerArray[i]);
+                }
+            })
+        })
+
     // Add Makers to Array
-    markerArray = [{
+    /* markerArray = [{
         location: {
             lat: 49.27633,
             lng: -123.12113
@@ -67,14 +102,13 @@ function initMap() {
         },
         content: `<h2>Hawksworth Restaurant</h2>`
     }];
-
+ */
     // Loop through markers
-    for (let i = 0; i < markerArray.length; i++) {
+    /* for (let i = 0; i < markerArray.length; i++) {
         addMarker(markerArray[i]);
-    }
+    } */
 
     // Add Marker
-
     function addMarker(property) {
         const marker = new google.maps.Marker({
             position: property.location,
