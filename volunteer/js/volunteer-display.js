@@ -3,17 +3,17 @@
  * Reads the database of scores
  * prints out table of the top 10 highest scores from highest to lowest with display name.
  */
- function scoreQuery() {
+ function volunteerQuery() {
     db.collection("volunteer")
         .where("date", ">", 1621503590496)
-        .limit(10)
+        .limit(100)
         .orderBy("date", "desc")
         .get()
         .then(function (snap) {
             snap.forEach(function (doc) {
-                var n = doc.data().userDisplayName;
-                var highScore = doc.data().userEmail;
-                var div = document.getElementById('leaderboard');
+                var name = doc.data().userDisplayName;
+                var email = doc.data().userEmail;
+                var div = document.getElementById('volunteerList');
                 var tbl = document.createElement('table');
                 tbl.style.width = '100%';
                 tbl.className = "table table-bordered ";
@@ -28,12 +28,12 @@
                     if (i == 0 && k == 0) {
                         break;
                     } else {
-                        tk.append(highScore);
-                        td.append(n);
+                        tk.append(email);
+                        td.append(name);
                     }
                 }
                 div.appendChild(tbl);
             })
         })
 }
-scoreQuery();
+volunteerQuery();

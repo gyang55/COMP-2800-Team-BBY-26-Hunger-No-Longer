@@ -1,0 +1,11 @@
+.volunteerForm {
+    margin-top: 30px;
+    position: relative;
+    padding-left: 20vw; 
+    padding-right: 20vw;
+}
+
+.volunteerForm > button {
+    margin-top: 10px;
+    width: 40%;
+}
