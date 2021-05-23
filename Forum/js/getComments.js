@@ -176,6 +176,7 @@ function editComment(refId) {
         
         db.collection("Comment").doc(refId).update({
             body: inputEditForm['textBody'].value,
+            date: new Date().toISOString().slice(0, 10) + "(edited)" //Source from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
         }).then(() => {
             alert("Edit Sucessful");
             window.location.href = window.location.href;
