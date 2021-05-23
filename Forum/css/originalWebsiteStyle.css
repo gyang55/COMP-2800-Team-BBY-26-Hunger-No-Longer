@@ -151,6 +151,7 @@ body {
 #title {
     display: block;
     padding-top: 20px;
+    padding-right: 2px;
     text-align: center;
     column-width: 2000px;
     margin-left: auto;
@@ -333,6 +334,7 @@ body {
     cursor: pointer; 
     /* NOTE: Text shadow edits from left to right: xyz directions */
 }
+
 
 #postButtonFont {
     color: white;
