@@ -60,6 +60,8 @@ function applyFetchedPostData(doc) {
             </div>
         `);
 
+        $("#pageTitle").html(`${doc.data().title}`);
+
 };
 
 });
