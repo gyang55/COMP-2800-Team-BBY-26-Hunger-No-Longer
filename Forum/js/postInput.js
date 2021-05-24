@@ -39,6 +39,7 @@ postForm.addEventListener('submit', (e) => {
     getUsername(); //Local invocation to assign username upon SUBMIT
     
     db.collection('Post').doc(myId).set({
+        UID: firebase.auth().currentUser.uid,
         title: postForm['titleBox'].value,
         body: postForm['textBody'].value,
         tag: postForm['tagBox'].value,

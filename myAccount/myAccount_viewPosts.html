@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hunger No Longer: My Account</title>
-    <link rel="stylesheet" type="text/css" href="/myAccount/css/myAccountStyle.css"/>
+    <title>Hunger No Longer: My Posts</title>
+    <link rel="stylesheet" type="text/css" href="/myAccount/css/myAccount_viewPost.css"/>
     <link rel="icon" href="/favicon/favicon-32x32.png">
     <style>
         #mySidenavContainer > #profileBackground {
@@ -44,7 +44,7 @@
                         <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
                     </div>
                     <div id="title">
-                        <span id="title-font">MY ACCOUNT</span>
+                        <span id="title-font">MY POSTS</span>
                     </div>
                     <div id="homeButtonContainer">
                         <div id="homeButton">
@@ -79,27 +79,21 @@
                                     </div>
                                     <!-- END OF INSERT FROM SERVER -->
 
-                                    <!-- FORM HERE -->
-                                    <form id="userInput">
-                                        <div class="bottom">
-                                            <div id="buttonContainer">
-                                                <div id="postButton" onclick="redirectToEditProfile()">
-                                                    <span id="postButtonFont">EDIT PROFILE</span>
-                                                </div>
-                                                <div>
-                                                    <label id="uploadCameraButton" class="btn btn-default" id="pictureButton" for="pictureButton"><span id="uploadCameraButtonFont">CHANGE PHOTO</span></label>
-                                                    <input type="file" name="uploadfile" id="pictureButton" style="display:none;"/>
-                                                </div>
-                                                <div id="viewMyPostsButton" onclick="redirectToViewPost()">
-                                                    <span id="postButtonFont">VIEW MY POSTS</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!-- END OF FORM -->
                                 </div>
                             </div>
                         </div>  
+                    </div>
+
+                    <!-- POST FEED -->
+                    <div id="postFeedContainer">
+                        <div id="noPostTextContainer">
+                            <span id="noPostText">You Have No Current Posts! <br><br> Please Visit the <a href="/Forum/Forum.html">Social Hub</a> <br> and Get Involved With The Community!</span>
+                        </div>
+                        <!-- INSERT POST FROM SERVER HERE -->
+                        <!-- INSERT POST FROM SERVER HERE -->
+                        <!-- INSERT POST FROM SERVER HERE -->
+                        <!-- INSERT POST FROM SERVER HERE -->
+                        <!-- INSERT POST FROM SERVER HERE -->
                     </div>
                 </div>
 
@@ -136,18 +130,5 @@
 <script src="/private/firebase-logout.js"></script>
 <script src="/Forum/js/redirectAuth.js"></script>
 <script src="/myAccount/js/getUserProfile.js"></script>
-<script src="/myAccount/js/changePhoto.js"></script>
+<script src="/myAccount/js/getUserPost.js"></script>
 
-<!-- JS Script to redirect users to "Edit Profile" upon button click -->
-<script>
-    function redirectToEditProfile() {  
-        window.location.href = "/myAccount/myAccountIndividual_edit.html";
-    };
-</script>
-
-<!-- JS Script to redirect users to "View Post" upon button click -->
-<script>
-    function redirectToViewPost() {  
-        window.location.href = "/myAccount/myAccount_viewPosts.html";
-    };
-</script>

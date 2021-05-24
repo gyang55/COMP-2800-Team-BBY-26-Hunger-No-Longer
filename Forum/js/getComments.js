@@ -1,6 +1,5 @@
 const url = new URL(window.location.href);
 var id = url.searchParams.get("id"); //UNIQUE doc id refering to the current Post clicked
-console.log(id);
 
 const comContainer = document.querySelector('#commentContainer');
 
@@ -178,7 +177,7 @@ function editComment(refId) {
             body: inputEditForm['textBody'].value,
             date: new Date().toISOString().slice(0, 10) + "(edited)" //Source from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
         }).then(() => {
-            alert("Edit Sucessful");
+            alert("Edit Successful!");
             window.location.href = window.location.href;
         })
         .catch((error) => {
