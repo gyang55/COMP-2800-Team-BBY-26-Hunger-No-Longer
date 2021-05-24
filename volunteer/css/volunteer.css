@@ -9,10 +9,12 @@
 }
 
 .name-col {
-    width: 50%;
+    width: 33%;
 }
 
 .email-col{
-    width: 50%;
+    width: 33%;
 }
-
+.avail-col{
+    width: 33%;
+}
