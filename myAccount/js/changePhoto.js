@@ -33,7 +33,8 @@ firebase.auth().onAuthStateChanged(function (user) {
                                 })
                                 .then(function () {
                                     alert("Picture Sucessfully Changed!");
-                                    window.location.replace("/myAccount/myAccount_individual.html");
+                                    setTimeout(function() { 
+                                        window.location.replace("/myAccount/myAccount_individual.html");}, 3000);
                                 })
                         })
                 })

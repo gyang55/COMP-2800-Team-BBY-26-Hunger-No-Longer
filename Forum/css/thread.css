@@ -289,7 +289,7 @@ body {
 
 #like-replyContainer {
     display: grid;
-    grid-template-columns: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px;
     height: 50px;
 }
 
@@ -302,16 +302,76 @@ body {
     padding-top: 15px;
     padding-left: 10px;
 }
-
-#replyButton {
+/* Button Shadow Effect: https://codepen.io/_elletownsend/pen/abZobbJ */
+.replyButton {
+    display: none;
     text-align: center;
-    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to left, rgb(121, 121, 121) , rgb(105, 105, 105));
+    background-color: rgb(121, 121, 121); /* For browsers that do not support gradients */
     padding-top: 5px;
     margin-top: 13px;
     border-radius: 10px 10px 10px 10px; 
     height: 25px;
-    color: rgb(54, 54, 54);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 5px #494949;
+}
+
+.replyButton:hover {
+    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
+    box-shadow: 0 3px #494949;
+	transform: translateY(1px);
+}
+
+.replyButton:active {
+    box-shadow: 0 5px #303030;
+	transform: translateY(4px);
+}
+
+.deleteButton {
+    display: none; 
+    text-align: center;
+    background-color: rgb(121, 121, 121); /* For browsers that do not support gradients */
+    padding-top: 5px;
+    margin-top: 13px;
+    margin-left: 20px;
+    width: 60px;
+    border-radius: 10px 10px 10px 10px; 
+    height: 25px;
+    color: rgb(255, 255, 255);
+	box-shadow: 0 5px #494949;
+}
+
+.deleteButton:hover {
+    background-color:rgb(255, 0, 0);
+	box-shadow: 0 3px #494949;
+	transform: translateY(1px);
+}
+
+.deleteButton:active {
+	box-shadow: 0 5px #303030;
+	transform: translateY(4px);
+}
+
+.deleteButtonUserPost { 
+    text-align: center;
+    background-color: rgb(121, 121, 121); /* For browsers that do not support gradients */
+    padding-top: 5px;
+    margin-left: 10px;
+    width: 60px;
+    border-radius: 10px 10px 10px 10px; 
+    height: 25px;
+    color: rgb(255, 255, 255);
+	box-shadow: 0 5px #494949;
+}
+
+.deleteButtonUserPost:hover {
+    background-color:rgb(255, 0, 0);
+	box-shadow: 0 3px #494949;
+	transform: translateY(1px);
+}
+
+.deleteButtonUserPost:active {
+	box-shadow: 0 5px #303030;
+	transform: translateY(4px);
 }
 
 #userCommentPic {
@@ -378,6 +438,7 @@ body {
     height: 325px;
     margin-top: 100px;
 }
+
 .modal-header {
     display: block;
     margin-left: auto;
@@ -429,6 +490,55 @@ body {
     color: white;
 }
 
+
+.deleteButton2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgb(48, 216, 132); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgb(0, 250, 125) , rgb(43, 197, 125));
+    padding-top: 8px;
+    height: 55px;
+    border-radius: 20px 20px 20px 20px; 
+    width: 35%;
+    color: white;
+}
+
+.deleteButton2 > a:link {
+    color: white;
+}
+
+.modal-body2 {
+    color: black;
+    height: 300px;
+}
+
+.modal-body2 > p {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.modal-title2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 23pt;
+    padding-top: 5px;
+    color: black;
+}
+
+#myModalEdit {
+    color: black;
+    height: 500px;
+}
+
+.modal-titleEdit {
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+
+
 /********TEXT AREA BOOTSTRAP STYLING*******/
 #textBody {
     width: 100%;
@@ -445,3 +555,4 @@ body {
     padding: 0.1rem 0 0 0;
     font-size: 0.875rem;
   }
+

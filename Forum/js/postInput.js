@@ -39,6 +39,7 @@ postForm.addEventListener('submit', (e) => {
     getUsername(); //Local invocation to assign username upon SUBMIT
     
     db.collection('Post').doc(myId).set({
+        UID: firebase.auth().currentUser.uid,
         title: postForm['titleBox'].value,
         body: postForm['textBody'].value,
         tag: postForm['tagBox'].value,
@@ -65,22 +66,31 @@ postForm.addEventListener('submit', (e) => {
                     var blob = URL.createObjectURL(file);
                     //store using this name
                     var storageRef = storage.ref("Post/" + myId + ".jpg");
+                    alert("Picture Sucessfully Uploaded!");
                     //upload the picked file
                     storageRef.put(file)
                         .then(function () {
                             //get the URL of stored file
                             storageRef.getDownloadURL()
                                 .then(function (url) { 
+                                const postForm = document.querySelector('#createAPostForm');
+                                postForm.addEventListener('submit', (e) => {
+                                    e.preventDefault(); //This function will prevent the page from refreshing upon user hitting ENTER KEY upon input.
+                                    getUsername(); //Local invocation to assign username upon SUBMIT
+                                    
                                     db.collection('Post').doc(myId).set({
-                                        "pictureURL": url},{
-                                            merge: true })
-                                        .then(function () {
-                                            alert("Picture Sucessfully Uploaded!");
-                                            // window.location.replace("/Forum/Forum.html");
-                                        }) .catch((error) => {
-                                                console.error("Error Uploading Image!", error);
-                                        });
-                                })
+                                        UID: firebase.auth().currentUser.uid,
+                                        title: postForm['titleBox'].value,
+                                        body: postForm['textBody'].value,
+                                        tag: postForm['tagBox'].value,
+                                        "pictureURL": url,
+                                        date: new Date().toISOString().slice(0, 10)},{ //Source from https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+                                            merge: true
+                                            }).then(() => {
+                                                // alert("Picture Sucessfully Uploaded!");
+                                            })
+                                });
+                            })
                         })
                 })
         }

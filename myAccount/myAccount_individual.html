@@ -90,6 +90,9 @@
                                                     <label id="uploadCameraButton" class="btn btn-default" id="pictureButton" for="pictureButton"><span id="uploadCameraButtonFont">CHANGE PHOTO</span></label>
                                                     <input type="file" name="uploadfile" id="pictureButton" style="display:none;"/>
                                                 </div>
+                                                <div id="viewMyPostsButton" onclick="redirectToViewPost()">
+                                                    <span id="postButtonFont">VIEW MY POSTS</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
@@ -139,5 +142,12 @@
 <script>
     function redirectToEditProfile() {  
         window.location.href = "/myAccount/myAccountIndividual_edit.html";
+    };
+</script>
+
+<!-- JS Script to redirect users to "View Post" upon button click -->
+<script>
+    function redirectToViewPost() {  
+        window.location.href = "/myAccount/myAccount_viewPosts.html";
     };
 </script>

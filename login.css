@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
 body {
     position: fixed;
     transition: background-color .5s;
+    
 }
 
 /**SIDE NAV CODE BY w3schools: https://www.w3schools.com/howto/howto_js_sidenav.asp */
@@ -45,6 +47,7 @@ body {
     display: grid;
     grid-template-rows: 200px auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 9999999;
 }
 
 /* MAKE THIS EXTERNAL!! */
@@ -71,13 +74,13 @@ body {
 }
 
 #profileName {
-    margin-top: 10px;
+    margin-top: -5px;
     color: white;
 }
 
 #profileEmail {
     color: white;
-    margin-top: -15px;
+    margin-top: -30px;
     font-size: 12pt;
 }
 
@@ -107,16 +110,25 @@ body {
 }
 /******************END OF NAV BAR CODE************************/
 
+#outerContainer {
+    margin: -10px;
+    background: #948E99;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2E1437, #948E99);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2E1437, #948E99); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 3000px;
+}
+
 #InnerContainer {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;    
 }
 
 #headingContainer {
     display: grid;
     grid-template-columns: auto auto 60px;
     height: 71px;
-    border-bottom: 0.5px black solid;
+    border-bottom: 3px solid rgba(255,255,255,0.9);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 #hamburgerMenu {
@@ -146,7 +158,6 @@ body {
 #title {
     display: block;
     padding-top: 20px;
-    padding-right: 2px;
     text-align: center;
     column-width: 2000px;
     margin-left: auto;
@@ -158,6 +169,7 @@ body {
     font-size: 20pt;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 #homeButtonContainer {
@@ -180,12 +192,12 @@ body {
 #feedContainer {
     display: grid;
     border-bottom: 0.5px black solid;
-    grid-template-rows: 650px auto;
+    grid-template-rows: auto auto auto auto auto auto;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     color: rgb(75, 75, 75);
-    background-color: rgb(255, 255, 255);
     row-gap: 5px;
+    height: 600px; 
     overflow: auto;
     overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -201,6 +213,10 @@ body {
     display: grid;
     grid-template-rows: 30px 100px 35px; /*REVISE?*/
     border: 1px solid rgb(107, 107, 107);
+}
+
+#feed:hover {
+    cursor: pointer;
 }
 
 #dateAndUserContainer {
@@ -296,133 +312,6 @@ body {
     background-color: rgb(175, 175, 175);
 }
 
-/*BOOTSTRAP from https://bootsnipp.com/snippets/xpyz9*/
-
-.card {
-    background-color: rgba(214, 224, 226, 0.2);
-}
-
-
-.card.hovercard {
-    position: relative;
-    padding-top: 0;
-    overflow: hidden;
-    text-align: center;
-    background-color: rgba(214, 224, 226, 0.1);
-}
-
-.card.hovercard .cardheader {
-    background-image: url("https://i.pinimg.com/originals/5c/2b/29/5c2b2971110912a5de3afc97f25e909b.jpg");
-    background-size: cover;
-    height: 135px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    border-bottom: 5px solid rgba(255,255,255,0.3);
-}
-
-.card.hovercard .avatar {
-    position: relative;
-    top: -50px;
-    margin-bottom: -50px;
-}
-
-.card.hovercard .avatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 5px solid rgba(0, 143, 238, 0.8);
-}
-
-.card.hovercard .info {
-    padding: 4px 8px 10px;
-}
-
-.card.hovercard .info .title {
-    margin-bottom: 4px;
-    font-size: 24px;
-    line-height: 1;
-    color: #262626;
-    vertical-align: middle;
-}
-
-.card.hovercard .info .desc {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: center;
-    color: #737373;
-    text-overflow: ellipsis;
-}
-
-.card.hovercard .bottom {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-    /* margin-bottom: -17px;   */
-    width: 65%;
-    height: 350px;
-}
-
-/*INPUT FORM BOOTSTRAP BY: https://codepen.io/fidalgodev/pen/bOGaVy */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-.form__label {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto', sans-serif;
-    font-size: 10pt;
-    margin-top: 2px;
-    transition: all 0.3s;
-    transform: translateY(0rem);
-}
-
-.form__input {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    font-size: 10pt;
-    margin: 0 auto;
-    padding: 10px 2rem;
-    border-radius: 0.2rem;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    width: 50%;
-    display: block;
-    border-bottom: 0.3rem solid transparent;
-    border: 1px solid black;
-    transition: all 0.3s;
-    text-align: center;
-}
-
-.form__input:placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-4rem);
-  transform: translateY(-4rem);
-}
-
-#fieldContainer { 
-    display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-rows: auto auto auto auto;
-    padding-top: 20px;
-    row-gap: 10px;
-}
-
 /* Gradient code from https://www.w3schools.com/css/css3_gradients.asp */
 #postButton {
     display: block;
@@ -431,10 +320,8 @@ body {
     text-align: center;
     background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
     background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
-    font-family: 'Roboto', sans-serif;
-    margin-top: 35px;
-    margin-bottom: 55px;
-    padding-top: 20px;
+    margin-top: -20px;
+    padding-top: 16px;
     height: 35px;
     border-radius: 20px 20px 20px 20px; 
     width: 50%;
@@ -459,155 +346,62 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Gradient code from https://www.w3schools.com/css/css3_gradients.asp */
-#uploadCameraButton {
+#loginContainer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
-    font-family: 'Roboto', sans-serif;
-    margin-top: 35px;
-    margin-bottom: 55px;
-    padding-top: 20px;
-    height: 35px;
-    border-radius: 20px 20px 20px 20px; 
-    width: 50%;
-}
-
-#uploadCameraButton:hover {
-    color:white;
-    cursor: pointer; 
-    text-decoration: underline;
-    /* NOTE: Text shadow edits from left to right: xyz directions */
-    text-shadow: 1px 1px 2px black, 0 0 25px rgb(78, 161, 255), 0 0 50px darkgoldenrod;
-}
-
-#uploadCameraButton a:visited {
-    color:white;
-    cursor: pointer; 
-    /* NOTE: Text shadow edits from left to right: xyz directions */
-}
-
-#uploadCameraButtonFont {
-    color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-#usernameSpot {
-    font-size: 12pt;
-}
-
-/* TEXT AREA STYLING */
-#textBody {
-    overflow: auto;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    font-family: 'Poppins', sans-serif;
-    width: 76%;
-    height: 100%;
-}
-
-#textBody::-webkit-scrollbar {
-    display: none;
-}
-
-#textBody > p {
-    margin-top: -2px;
-}
-
-#textBody {
-    min-height: 50px;
-    resize: none;
-    color: #666;
-    font-size: 12pt;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 0.2rem;
-  
-  }
-  
-  #the-count {
-    display: float-right;
-    font-size: 0.875rem;
-  }
-
-  #submitButton {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
-    margin-top: 35px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-bottom: 55px;
-    font-size: 12pt;
-    height: 45px;
-    border-radius: 20px 20px 20px 20px; 
-    width: 60%;
-    color: white;
-    border: none;
-}
-
-#submitButton > a:link {
-    color: white;
-}
-
-.modal-content {
+    margin-top: 150px;
+    background-color: gainsboro;
     height: 325px;
-    margin-top: 100px;
+    width: 400px;
+    border-radius: 50px;
+    border:rgba(0, 0, 0, 0.452) solid;
 }
-.modal-header {
+
+#firebaseui-auth-container {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-  
-.modal-content {
-    height: 325px;
-    margin-top: 100px;
-}
-.modal-header {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 15px;
 }
 
-#buttonContainer {
-    display: grid;
-    grid-template-rows: 100px auto;
+#logo {
+    margin-top: 143px;
+    margin-left: 135px;
+    position: fixed;
 }
 
-/* Gradient code from https://www.w3schools.com/css/css3_gradients.asp */
-#viewMyPostsButton {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: rgb(67, 135, 212); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to left, rgb(0, 143, 238) , rgb(0, 98, 190));
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 55px;
-    margin-top: -10px;
-    padding-top: 20px;
-    height: 35px;
-    border-radius: 20px 20px 20px 20px; 
-    width: 50%;
-}
+@media only screen and (max-width: 405px) {
+    #loginContainer {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px;
+        background-color: gainsboro;
+        height: 325px;
+        width: 300px;
+        border-radius: 30px;
+        border:rgba(0, 0, 0, 0.452) solid;
+    }
+    
+    #firebaseui-auth-container {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 15px;
+    }
+    
+    #logo {
+        margin-top: 143px;
+        margin-left: 90px;
+        position: fixed;
+    }
 
-#viewMyPostsButton:hover {
-    color:white;
-    cursor: pointer; 
-    text-decoration: underline;
-    /* NOTE: Text shadow edits from left to right: xyz directions */
-    text-shadow: 1px 1px 2px black, 0 0 25px rgb(78, 161, 255), 0 0 50px darkgoldenrod;
-}
-
-#viewMyPostsButton a:visited {
-    color:white;
-    cursor: pointer; 
-    /* NOTE: Text shadow edits from left to right: xyz directions */
+    #headingContainer {
+        display: grid;
+        grid-template-columns: auto auto 60px;
+        height: 71px;
+        border-bottom: 3px solid rgba(255,255,255,0.9);
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
 }
