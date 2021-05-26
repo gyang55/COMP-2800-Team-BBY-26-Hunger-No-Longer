@@ -35,19 +35,25 @@ $(document).ready(function() {
         var updateBusiness = db.collection("Business");
 
         var user = firebase.auth().currentUser;
-        updateBusiness.add({
-            UID: user.uid,
-            bName: busName,
-            bLocation: address,
-            bphoneNo: busPhone,
-            bState: state,
-            bCity: city,
-            bZip: zip,
-            latitude: lat,
-            longitude: lng
-        }).then(function() {
-            window.location.href = './BusRegisFeedBack.html';
-        });
+        if (busName === null || address === null || busPhone === null) {
+            alert('Please fill all the required information')
+
+        } else {
+            updateBusiness.add({
+                UID: user.uid,
+                bName: busName,
+                bLocation: address,
+                bphoneNo: busPhone,
+                bState: state,
+                bCity: city,
+                bZip: zip,
+                latitude: lat,
+                longitude: lng
+            }).then(function() {
+                //window.location.href = './BusRegisFeedBack.html';
+            });
+        }
+
     }
 
     /**
@@ -67,10 +73,19 @@ $(document).ready(function() {
             busName = $("#busname").val();
             busPhone = $("#phone").val();
             address = $("#inputAddress").val() + ", " + $("#inputAddress2").val();
+            console.log(address);
             city = $("#inputCity").val();
             state = $("#inputState").val();
             zip = $("#inputZip").val();
-            getCoordinates(address)
+            if (!busName) {
+                $("#busname").fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(50);
+            } else if (!busPhone) {
+                $("#phone").fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(50);
+            } else {
+                getCoordinates(address)
+            }
+
+
         });
     }
     getInfo();
@@ -79,16 +94,24 @@ $(document).ready(function() {
         fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + addre + '&key=' + 'AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                latitude = data.results[0].geometry.location.lat;
-                longitude = data.results[0].geometry.location.lng;
-                console.log({
-                    latitude,
-                    longitude
-                })
+                if (data.status != 'OK') { // check if the input address is valid
+                    alert('Cannot find the addresss');
+                } else if (data.results[0].formatted_address.endsWith('USA')) { // check if the address if default(within usa)
+                    alert('Please fill the address correctly');
+                } else {
+                    console.log(data);
+                    latitude = data.results[0].geometry.location.lat;
+                    longitude = data.results[0].geometry.location.lng;
+                    console.log({
+                        latitude,
+                        longitude
+                    })
+                }
+
             }).then(() => {
                 updateBusiness(busName, busPhone, address, city, state, zip, latitude, longitude);
             })
+
     }
 
 });
