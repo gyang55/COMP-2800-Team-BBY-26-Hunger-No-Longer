@@ -92,22 +92,33 @@ function getInfo() {
 }
 getInfo();
 
-/**
- * Toggle Infomation for User for times available for Volunteering
+/**  
+ * Only accepts numbers in the form.
+ * @param textbox input for text form.
+ * @param inputFilter prevents user from inputting anything else besides numbers.
  */
- //var checkbox = $('#form-check form-switch'),
-     //monday = $('#availableMonday');
+ function setInputFilter(textbox, inputFilter) {
+  ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+      textbox.addEventListener(event, function () {
+          if (inputFilter(this.value)) {
+              this.oldValue = this.value;
+              this.oldSelectionStart = this.selectionStart;
+              this.oldSelectionEnd = this.selectionEnd;
+          } else if (this.hasOwnProperty("oldValue")) {
+              this.value = this.oldValue;
+              this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+          } else {
+              this.value = "";
+          }
+      });
+  });
+}
 
- //monday.hide();
- 
-/*  //checkbox.on('click', function() {
-     if($(this).is(':checked')) {
-       monday.show();
-       monday.find('input').attr('required', true);
-       console.log(monday);
-     } else {
-       monday.hide();
-       monday.find('input').attr('required', false);
-     }
- }) */
+/**  
+* points to phoneNumber in Volunteer.html.
+* prevents anything besides numbers.
+*/
+setInputFilter(document.getElementById("number-input"), function (value) {
+  return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
+});
 
