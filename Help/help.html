@@ -68,18 +68,23 @@
               <span id="title-font">Hunger No Longer</span>
           </div>
           <div id="homeButtonContainer">
-              <div id="homeButton">
+            <div class="dropdown">
+              <img onclick="myFunction()" id="actualHomeButton" src="https://img.icons8.com/color/50/000000/twitter--v1.png">
+              <!-- Twitter API here!! -->
+              <div id="myDropdown" class="dropdown-content">
+                  <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark" href="https://twitter.com/HungerNoLonger_?ref_src=twsrc%5Etfw">Tweets by HungerNoLonger_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a href="https://twitter.com/HungerNoLonger_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @HungerNoLonger_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="@HungerNoLongerApp " data-show-count="false">Tweet @HungerNoLonger_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
           </div>
-      </div>
+          </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid">
+    <div id="postContainer">
         <div class="container">
           <h1 class="display-4">Welcome to FAQ</h1>
           <p class="lead">This is where your most commonly asked questions are answered.
           </p>
-        </div>
       </div>
 
       <div class="card" style="width: vw;">
@@ -119,6 +124,7 @@
             On the "My Account" page users can click on edit profile then enter a new username in the box provided. </p>
         </div>
       </div>
+    </div>
 
 <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -146,6 +152,7 @@
   <script src="/Forum/js/slidingNav.js"></script>
   <script src="/private/firebase-login.js"></script>
   <script src="/myAccount/js/getUserProfile.js"></script>
+  <script src="/Forum/js/dropdownSocialMedia.js"></script>
 </body>
 
 </html>
