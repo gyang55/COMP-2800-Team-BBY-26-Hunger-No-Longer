@@ -47,8 +47,14 @@
                         <span id="title-font">SOCIAL HUB</span>
                     </div>
                     <div id="homeButtonContainer">
-                        <div id="homeButton">
-                            <img id="actualHomeButton" src="https://img.icons8.com/material/42/000000/home--v5.png">
+                        <div class="dropdown">
+                            <img onclick="myFunction()" id="actualHomeButton" src="https://img.icons8.com/color/50/000000/twitter--v1.png">
+                            <!-- Twitter API here!! -->
+                            <div id="myDropdown" class="dropdown-content">
+                                <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark" href="https://twitter.com/HungerNoLonger_?ref_src=twsrc%5Etfw">Tweets by HungerNoLonger_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <a href="https://twitter.com/HungerNoLonger_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @HungerNoLonger_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="@HungerNoLongerApp " data-show-count="false">Tweet @HungerNoLonger_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +108,7 @@
 <script src="/Forum/js/redirectAuth.js"></script>
 <script src="/Forum/js/getUserProfileNav.js"></script>
 <script src="/Forum/js/getPosts.js"></script>
+<script src="/Forum/js/dropdownSocialMedia.js"></script>
 
 <!-- SCRIPT FOR REDIRECT to CreateAPost.html -->
 <script>

@@ -51,7 +51,7 @@
                 <form id="createAPostForm">
                     <div id="postContainer">
                         <div id="feed">    
-                            <input type="text" id="titleBox" name="search" placeholder="Enter Title...">        
+                            <input type="text" id="titleBox" name="search" placeholder="Enter Title..." required>        
                         </div>
                         <div id="feed"> 
                             <!-- Textarea Code from: https://codepen.io/zabielski/pen/gPPywv -->
@@ -72,7 +72,7 @@
                                 <!-- Modal content-->
                                 <div class="modal-content" keyboard="true">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Submitting Your Post?</h4>
+                                        <h4 class="modal-title"><b>Submitting Your Post?</b></h4>
                                     </div>
                                     <div class="modal-body">
                                         <p>Please review your post before submitting to Social Hub.<br><br>You can edit it if you need to change something.</p>
@@ -86,6 +86,55 @@
                         </div>
                     </div>
                 </form>
+
+                <!-- Modal for Upload Image -->
+                <div class="modal fade" id="myModalUploadImageWait" role="dialog" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 12pt; color: black;">
+                            <div class="modal-dialog">
+                            
+                                <!-- Modal content-->
+                                <div class="modal-content" keyboard="true">
+                                    <div class="modal-header">
+                                    <h4 class="modal-title"><b>Uploading Image</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- /* CSS Loader by dave: https://codepen.io/redlabor/pen/idHeG */ -->
+                                    <div class="loading">
+                                        <h2 id="loadingFont">Image is being processed, please wait...</h2>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for Image Upload Sucessful-->
+                <div class="modal fade" id="myModalUploadImageSucessful" role="dialog" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 12pt; color: black;">
+                            <div class="modal-dialog">
+                            
+                                <!-- Modal content-->
+                                <div class="modal-content" keyboard="true">
+                                    <div class="modal-header">
+                                    <h4 class="modal-title"><b>Upload Successful</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h2 id="loadingFont2">Image has been sucessfully uploaded!</h2>
+
+                                    <!-- Dancing Banana by Ramiro: https://codepen.io/croce/pen/sjwpg -->
+                                    <div class="banana">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div id="adSpaceContainer"></div>
                 <div id="lowerNavContainer">

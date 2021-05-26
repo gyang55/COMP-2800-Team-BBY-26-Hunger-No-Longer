@@ -66,10 +66,12 @@ postForm.addEventListener('submit', (e) => {
                     var blob = URL.createObjectURL(file);
                     //store using this name
                     var storageRef = storage.ref("Post/" + myId + ".jpg");
-                    alert("Picture Sucessfully Uploaded!");
+                    $('#myModalUploadImageWait').modal('show');
                     //upload the picked file
                     storageRef.put(file)
                         .then(function () {
+                            $('#myModalUploadImageWait').modal('hide');
+                            $('#myModalUploadImageSucessful').modal('show');
                             //get the URL of stored file
                             storageRef.getDownloadURL()
                                 .then(function (url) { 
