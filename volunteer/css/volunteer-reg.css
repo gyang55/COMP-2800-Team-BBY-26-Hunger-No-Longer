@@ -13,7 +13,7 @@
 
 /* MODAL STUFF */
 #myModalRevokeAccess {
-    display: block;
+    display: none;
     margin-top: 150px;
     text-align: center;
 }
