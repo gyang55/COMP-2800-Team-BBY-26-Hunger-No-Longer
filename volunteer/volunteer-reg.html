@@ -65,63 +65,54 @@
       </div>
     </div>
     <!-- This page modifies Volunteer infomation -->
+    <form>
     <div class="volunteerForm">
       <h2>Fill out the form to register as a volunteer!</h2>
       <div class="form-group">
         <label for="exampleInputAddress">Address</label>
-        <input type="address" class="form-control" id="address-input" placeholder="Address">
+        <input type="address" class="form-control" id="address-input" placeholder="Address" />
       </div>
       <div class="row">
         <div class="col">
           <label for="exampleInputAddress">City</label>
-          <input type="text" class="form-control" id="city-input" placeholder="City">
+          <input type="text" class="form-control" id="city-input" placeholder="City" />
         </div>
         <div class="col">
           <label for="exampleInputAddress">Province</label>
-          <input type="text" class="form-control" id="province-input" placeholder="Province">
+          <input type="text" class="form-control" id="province-input" placeholder="Province" />
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputNumber">Phone Number</label>
         <input type="tel" class="form-control" id="number-input" maxlength="10"
-        placeholder="123-465-6718" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-      </div>
+        placeholder="123-465-6718" required />
+        </div>
       <h3>Click available times you can volunteer!</h3>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Mon">
+        <input type="checkbox" id="availDay" name="days" value="Mon"/>
         Monday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Tues">
+        <input type="checkbox" id="availDay" name="days" value="Tues"/>
         Tuesday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Wed">
+        <input type="checkbox" id="availDay" name="days" value="Wed"/>
         Wednesday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Thur">
+        <input type="checkbox" id="availDay" name="days" value="Thur"/>
         Thursday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Fri">
+        <input type="checkbox" id="availDay" name="days" value="Fri"/>
         Friday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Sat">
+        <input type="checkbox" id="availDay" name="days" value="Sat"/>
         Saturday
-      </label>
-      <label>
-        <input type="checkbox" id="availDay" name="days" value="Sun">
+        <input type="checkbox" id="availDay" name="days" value="Sun"/>
         Sunday
-      </label>
-      <h5>By clicking 'Submit' you acknowledge and agree to be contacted by Charities or Businesses</h3>
-
-
-        <button type="submit" id="button-sub" class="btn btn-primary">Submit</button>
+        <h5>By clicking 'Submit' you acknowledge and agree to be contacted by Charities or Businesses</h5>
+        <div>
+        <input type="submit" id="button-sub" class="btn btn-primary"></input>
         <button onclick="location.href='https://hunger-no-longer.web.app/Forum/Forum.html'" id="button-sub"
           class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
     </div>
+  </form>
+ 
+
 
 
     <!----------------------------------------------->
