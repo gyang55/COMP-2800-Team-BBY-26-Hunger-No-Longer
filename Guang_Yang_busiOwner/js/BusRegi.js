@@ -50,7 +50,7 @@ $(document).ready(function() {
                 latitude: lat,
                 longitude: lng
             }).then(function() {
-                //window.location.href = './BusRegisFeedBack.html';
+                window.location.href = './BusRegisFeedBack.html';
             });
         }
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
         $("#submit").click(function() {
             busName = $("#busname").val();
             busPhone = $("#phone").val();
-            address = $("#inputAddress").val() + ", " + $("#inputAddress2").val();
+            address = $("#inputAddress").val() + " " + $("#inputAddress2").val();
             console.log(address);
             city = $("#inputCity").val();
             state = $("#inputState").val();
