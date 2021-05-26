@@ -2,12 +2,19 @@
     display: grid;
     grid-template-rows: auto auto;
     row-gap: 50px;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    
 }
 #volunteerButtons > h2 {
     text-align: center;
     margin-top: 10px;
 }
 
+#confirmButton {
+    top: 50%;
+    
+}
 .name-col {
     width: 33%;
 }
@@ -18,3 +25,5 @@
 .avail-col{
     width: 33%;
 }
+
+
