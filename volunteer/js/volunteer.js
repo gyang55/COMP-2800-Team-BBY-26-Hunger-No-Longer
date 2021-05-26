@@ -13,9 +13,6 @@ $(document).ready(function () {
     });
 });
 
-/**
- * 
- */
 
 // Select all checkboxes with the name 'days' using querySelectorAll.
 var checkboxes = document.querySelectorAll("input[type=checkbox][name=days]");
@@ -76,6 +73,7 @@ checkboxes.forEach(function(checkbox) {
     });
 }
 
+
 /**
  * Retrieves user input and updates volunteer profile.
  */
@@ -87,10 +85,19 @@ function getInfo() {
         var updateNumber = document.getElementById("number-input").value;
         var availDay = availableDays;
 
+        if (updateAddress, updateCity, updateProv != "") 
+          alert("Thank you for filling it out.")
+        else {
+          alert("Don't leave it blank!")
+        return false;
+        }
+
         updateVolunteer(updateAddress, updateCity, updateProv, updateNumber, availDay);
     });
 }
 getInfo();
+
+
 
 /**  
  * Only accepts numbers in the form.
@@ -113,6 +120,7 @@ getInfo();
       });
   });
 }
+
 
 /**  
 * points to phoneNumber in Volunteer.html.

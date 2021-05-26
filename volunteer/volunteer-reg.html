@@ -65,27 +65,27 @@
       </div>
     </div>
     <!-- This page modifies Volunteer infomation -->
-    <form>
+    <form id=form>
     <div class="volunteerForm">
       <h2>Fill out the form to register as a volunteer!</h2>
       <div class="form-group">
         <label for="exampleInputAddress">Address</label>
-        <input type="address" class="form-control" id="address-input" placeholder="Address" />
+        <input type="address" class="form-control" id="address-input" placeholder="Address" required />
       </div>
       <div class="row">
         <div class="col">
           <label for="exampleInputAddress">City</label>
-          <input type="text" class="form-control" id="city-input" placeholder="City" />
+          <input type="text" class="form-control" id="city-input" placeholder="City" required />
         </div>
         <div class="col">
           <label for="exampleInputAddress">Province</label>
-          <input type="text" class="form-control" id="province-input" placeholder="Province" />
+          <input type="text" class="form-control" id="province-input" placeholder="Province" required />
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputNumber">Phone Number</label>
         <input type="tel" class="form-control" id="number-input" maxlength="10"
-        placeholder="123-465-6718" required />
+        placeholder="1234656718" required />
         </div>
       <h3>Click available times you can volunteer!</h3>
         <input type="checkbox" id="availDay" name="days" value="Mon"/>
@@ -103,15 +103,20 @@
         <input type="checkbox" id="availDay" name="days" value="Sun"/>
         Sunday
         <h5>By clicking 'Submit' you acknowledge and agree to be contacted by Charities or Businesses</h5>
-        <div>
-        <input type="submit" id="button-sub" class="btn btn-primary"></input>
-        <button onclick="location.href='https://hunger-no-longer.web.app/Forum/Forum.html'" id="button-sub"
+        <div id=submit-button-content>
+          <button type="button" id="button-sub" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Submit
+          </button>        
+          <button onclick="location.href='https://hunger-no-longer.web.app/Forum/Forum.html'" id="button-sub"
           class="btn btn-secondary">Cancel</button>
         </div>
       </div>
     </div>
   </form>
- 
+
+
+
+
 
 
 
