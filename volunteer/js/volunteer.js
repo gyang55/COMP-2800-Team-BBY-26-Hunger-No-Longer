@@ -29,7 +29,7 @@ checkboxes.forEach(function(checkbox) {
       .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
       
     availableDays = availableDays.toString();
-    console.log(availableDays)
+    //console.log(availableDays)
   })
 });
 // Checkbox for Time
