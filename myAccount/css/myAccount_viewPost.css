@@ -648,7 +648,6 @@ body {
     display:none
 }
 
-
 #nameAndDateContainer {
     display: grid;
     grid-template-columns: 137px auto auto;

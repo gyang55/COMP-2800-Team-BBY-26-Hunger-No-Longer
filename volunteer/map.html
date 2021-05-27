@@ -132,30 +132,119 @@
         </div>      
         <!--********* NAV BAR END ***********-->
         <div id="InnerContainer">
-        <div id="headingContainer">
-          <div id="hamburgerMenu">
-              <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
-          </div>
-          <div id="title">
-              <span id="title-font">FIND FOOD</span>
-          </div>
-          <div id="homeButtonContainer">
-              <div id="homeButton">
-              </div>
-          </div>
-      </div>
-      </div>
-<div id=mapButtons>
-<h2>Enter address to checkout food near you!</h2>
-</div> 
-<!-- Map insert here. -->
-<div id="googleMap" style="width:100%;height:400px;"></div>
+            <div id="headingContainer">
+                <div id="hamburgerMenu">
+                    <span id="menu" onclick="openNav()"><img src="https://img.icons8.com/material-two-tone/48/000000/menu--v4.png"/></span>
+                </div>
+                <div id="title">
+                    <span id="title-font">FIND FOOD</span>
+                </div>
+                <div id="homeButtonContainer">
+                    <div id="homeButton">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id=mapButtons>
+            <h2>Enter address to checkout food near you!</h2>
+        </div> 
+        <!-- Map insert here. -->
+        <div id="googleMap" style="width:100%;height:400px;"></div>
 
-<p id="geo"></p>
+        <p id="geo"></p>
 
-<div id=foodButton>
-<button type="submit" style="width: 100%;" onclick='updatePosition()' class="btn btn-primary">Get food for me</button>
-</div>
+        <div id=foodButton>
+            <button type="submit" style="width: 100%;" onclick='updatePosition()' class="btn btn-primary">Get food for me</button>
+        </div>
+
+        <!-- FOR BUSINESSES ON MAP (HIDE FOR NOW, script will be used to show it!) -->
+        <div id="postContainer">
+                <!-- GET BUSINESS FROM SERVER HERE -->
+                <div id="${doc.id}">
+                    <div id="feed" style="display: grid;
+                                    grid-template-rows: 30px 100px 35px auto auto auto; /*REVISE?*/
+                                    background-color: white;
+                                    height: 150px;
+                                    border-radius: 50px;
+                                    margin-left: 10px;
+                                    margin-right: 10px;">
+                        <div id="nameAndDateContainer" style="display: grid; grid-template-columns: 137px auto auto;">
+                            <div id="userSpot" style="margin-top: 7px; padding-left: 35px;">MiamiMikexX</div>
+                            <div id="dateSpot" style="margin-top: 7px;">May 11th, 2021</div>
+                        </div>
+                        <div id="picAndTextContainer" style="display: grid; grid-template-columns: 100px auto;"> 
+                            <div id="pictureSpot">
+                                <div id="picture">
+                                    <img src="https://assets.simpleviewinc.com/simpleview/image/upload/crm/vancouverbc/Keg-Logo9_b7f489e3-5056-b3a8-49bf3381e7574da6.jpg" width="85px" height="85px" style="display: block; margin-left: 35px; margin-top: -5px; margin-right: auto;">
+                                </div>
+                            </div>
+                            <div id="titleTextContainer" style="display: grid; grid-template-rows: 32px 50px;">
+                                <div id="titleSpot" style="font-size: 16px; font-family:Georgia, 'Times New Roman', Times, serif; 
+                                                            font-weight: 900; 
+                                                            color: black;
+                                                            padding-left: 35px;
+                                                            padding-right: 20px;
+                                                            overflow: auto; 
+                                                            overflow-x: hidden; 
+                                                            text-overflow: ellipsis; 
+                                                            -ms-overflow-style: none; 
+                                                            scrollbar-width: none; 
+                                                            height: 20px;">
+                                    <!-- ${doc.data().title} -->
+                                    The Keg Steakhouse + Bar (Burnaby)
+                                </div>
+                                <div id="textBodySpot" style="overflow: auto; 
+                                                        overflow-x: hidden; 
+                                                        -ms-overflow-style: none; 
+                                                        scrollbar-width: none; 
+                                                        height: 58px;
+                                                        margin-top: -7px;
+                                                        padding-left: 35px;
+                                                        text-overflow: ellipsis; 
+                                                        padding-right: 20px;">
+                                    <!-- ${doc.data().body} -->
+                                    Juicy Steak!
+                                </div>
+                            </div>
+                        </div>
+                        <div id="likeLoveContainer" style="display: grid; grid-template-columns: 50px 50px 50px auto; margin-top: -15px;">
+                            <div id="heart" style="padding-top: 3px; padding-left: 35px;">
+                                <a href=""><img src="https://img.icons8.com/color/25/000000/like--v3.png"/></a>
+                            </div>
+                            <div id="smile" style="padding-top: 3px; padding-left: 30px;">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile" style="padding-top: 5px; padding-left: 25px;">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- POST 2 -->
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+            <div id="busPost">
+                
+            </div>
+        </div>
 
 
             <!-- Modal for Revoking Access -->

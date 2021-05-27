@@ -82,10 +82,8 @@ $(document).ready(function() {
             } else if (!cPhone) {
                 $("#phone").fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(50);
             } else {
-                getCoordinates(address)
+                getCoordinates(address);
             }
-
-
         });
     }
     getInfo();
