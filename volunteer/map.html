@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Hunger No Longer: Find Food</title>
+=======
     <title>Volunteer</title>
     <!--FontAwesome css-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+>>>>>>> fcaa52d571da8feb412e548eca8f89c9b1952765
     <link rel="stylesheet" type="text/css" href="/volunteer/css/volunteer.css" />
     <link rel="stylesheet" type="text/css" href="css/map.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -130,15 +134,16 @@
                 <!-- END OF INSERT FROM SERVER -->
             </div>
             <div id="mySidenavContents">
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
+                <a href="/Guang_Yang_busiOwner/html/BusNews.html"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/home-page.png"><b>Home</b></a>
                 <a href="/myAccount/myAccount_individual.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/gender-neutral-user.png"><b>My Account</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png" /><b>Place Order</b></a>
-                <a href="/volunteer/volunteerLanding.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png" /><b>Volunteer</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png" /><b>My Deliveries</b></a>
-                <a href="/Forum/Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png" /><b>Social Hub</b></a>
-                <a href="/AboutUs/aboutUs.html"><img id="menuIcon" src="https://img.icons8.com/doodle/27/000000/employee-card--v1.png" /><b>About Us</b></a>
-                <a href="#"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/help.png" /><b>Help</b></a>
-                <a href="#" onclick="logOut()"><img id="logOutIcon" src="https://img.icons8.com/plasticine/30/000000/export.png" /><b>Log Out</b></a>
+                <a href="/volunteer/map.html"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/shopping-cart.png"/><b>Place Order</b></a>
+                <a href="/volunteer/volunteerLanding.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/exercise.png"/><b>Volunteer</b></a>
+                <a href="/volunteer/volunteer-displayList.html"><img id="menuIcon" src="https://img.icons8.com/dusk/27/000000/add-list.png"/><b>Volunteer List</b></a>
+                <a href="#"><img id="menuIcon" src="https://img.icons8.com/office/25/000000/truck.png"/><b>My Deliveries</b></a>
+                <a href="/Forum/Forum.html"><img id="menuIcon" src="https://img.icons8.com/office/27/000000/crowd.png"/><b>Social Hub</b></a>
+                <a href="/AboutUs/aboutUs.html"><img id="menuIcon" src="https://img.icons8.com/doodle/27/000000/employee-card--v1.png"/><b>About Us</b></a>
+                <a href="/Help/help.html"><img id="menuIcon" src="https://img.icons8.com/officel/25/000000/help.png"/><b>Help</b></a>
+                <a href="#" onclick="logOut()" ><img id="logOutIcon" src="https://img.icons8.com/plasticine/30/000000/export.png"/><b>Log Out</b></a>
             </div>
         </div>
         <!--********* NAV BAR END ***********-->
@@ -156,9 +161,16 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+        
+        <div id=mapButtons>
+            <h2>Enter address to checkout food near you!</h2>
+        </div> 
+=======
         <div id=mapButtons>
             <h2>Enter address to checkout food near you!</h2>
         </div>
+>>>>>>> fcaa52d571da8feb412e548eca8f89c9b1952765
         <!-- Map insert here. -->
         <div id="googleMap" style="width:100%;height:400px;"></div>
 
@@ -167,6 +179,74 @@
         <div id=foodButton>
             <button type="submit" style="width: 100%;" onclick='updatePosition()' class="btn btn-primary">Get food for me</button>
         </div>
+<<<<<<< HEAD
+
+        <!-- FOR BUSINESSES ON MAP (HIDE FOR NOW, script will be used to show it!) -->
+        <div id="postContainer">
+                <!-- GET BUSINESS FROM SERVER HERE -->
+                <div id="${doc.id}">
+                    <div id="feed" style="display: grid;
+                                    grid-template-rows: 30px 100px 35px auto auto auto; /*REVISE?*/
+                                    background-color: white;
+                                    height: 150px;
+                                    border-radius: 50px;
+                                    margin-left: 10px;
+                                    margin-right: 10px;">
+                        <div id="nameAndDateContainer" style="display: grid; grid-template-columns: 137px auto auto;">
+                            <div id="userSpot" style="margin-top: 7px; padding-left: 35px;">MiamiMikexX</div>
+                            <div id="dateSpot" style="margin-top: 7px;">May 11th, 2021</div>
+                        </div>
+                        <div id="picAndTextContainer" style="display: grid; grid-template-columns: 100px auto;"> 
+                            <div id="pictureSpot">
+                                <div id="picture">
+                                    <img src="https://assets.simpleviewinc.com/simpleview/image/upload/crm/vancouverbc/Keg-Logo9_b7f489e3-5056-b3a8-49bf3381e7574da6.jpg" width="85px" height="85px" style="display: block; margin-left: 35px; margin-top: -5px; margin-right: auto;">
+                                </div>
+                            </div>
+                            <div id="titleTextContainer" style="display: grid; grid-template-rows: 32px 50px;">
+                                <div id="titleSpot" style="font-size: 16px; font-family:Georgia, 'Times New Roman', Times, serif; 
+                                                            font-weight: 900; 
+                                                            color: black;
+                                                            padding-left: 35px;
+                                                            padding-right: 20px;
+                                                            overflow: auto; 
+                                                            overflow-x: hidden; 
+                                                            text-overflow: ellipsis; 
+                                                            -ms-overflow-style: none; 
+                                                            scrollbar-width: none; 
+                                                            height: 20px;">
+                                    <!-- ${doc.data().title} -->
+                                    The Keg Steakhouse + Bar (Burnaby)
+                                </div>
+                                <div id="textBodySpot" style="overflow: auto; 
+                                                        overflow-x: hidden; 
+                                                        -ms-overflow-style: none; 
+                                                        scrollbar-width: none; 
+                                                        height: 58px;
+                                                        margin-top: -7px;
+                                                        padding-left: 35px;
+                                                        text-overflow: ellipsis; 
+                                                        padding-right: 20px;">
+                                    <!-- ${doc.data().body} -->
+                                    Juicy Steak!
+                                </div>
+                            </div>
+                        </div>
+                        <div id="likeLoveContainer" style="display: grid; grid-template-columns: 50px 50px 50px auto; margin-top: -15px;">
+                            <div id="heart" style="padding-top: 3px; padding-left: 35px;">
+                                <a href=""><img src="https://img.icons8.com/color/25/000000/like--v3.png"/></a>
+                            </div>
+                            <div id="smile" style="padding-top: 3px; padding-left: 30px;">
+                                <a href=""><img src="https://img.icons8.com/material-outlined/25/000000/happy--v2.png"/></a>
+                            </div>
+                            <div id="notSmile" style="padding-top: 5px; padding-left: 25px;">
+                                <a href=""><img src="https://img.icons8.com/android/21/000000/sad.png"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+=======
+>>>>>>> fcaa52d571da8feb412e548eca8f89c9b1952765
 
         <!-- Modal for Revoking Access -->
         <div class="modal fade" id="myModalRevokeAccess" role="dialog" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 12pt; color: black;">
@@ -195,10 +275,6 @@
             </div>
         </div>
 
-
-
-
-
         <!----------------------------------------------->
         <!-- JS: Boostrap, Firebase, API related    -->
         <!----------------------------------------------->
@@ -223,7 +299,5 @@
         <script src="js/mapVolunteer.js"></script>
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg&callback=initialize"></script> -->
         <!-- <script src="/volunteer/js/volunteerCheck.js"></script> -->
-
 </body>
-
 </html>
