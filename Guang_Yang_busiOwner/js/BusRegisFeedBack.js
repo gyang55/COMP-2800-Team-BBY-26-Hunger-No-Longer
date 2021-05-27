@@ -9,6 +9,7 @@ $(document).ready(function() {
     }
     countDown();
 
+    // timer
     setInterval(() => {
         if (timer == 0) {
             location.href = './BusNews.html';
