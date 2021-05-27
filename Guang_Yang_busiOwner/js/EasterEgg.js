@@ -1,3 +1,4 @@
+// triger the Easter egg after users input "hungernolonger"
 $(function() {
     var egg = new Egg();
     egg.addCode("h,u,n,g,e,r,n,o,l,o,n,g,e,r", function() {

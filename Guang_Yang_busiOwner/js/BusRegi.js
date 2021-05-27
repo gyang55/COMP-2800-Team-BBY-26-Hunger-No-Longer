@@ -90,6 +90,7 @@ $(document).ready(function() {
     }
     getInfo();
 
+    // get business geolcoation data from the address users typed in
     function getCoordinates(addre) {
         fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + addre + '&key=' + 'AIzaSyC9gRYsFCstlBzL6rd1Sykt5ZeJ2iuK2Yg')
             .then(response => response.json())
@@ -107,7 +108,6 @@ $(document).ready(function() {
                         longitude
                     })
                 }
-
             }).then(() => {
                 updateBusiness(busName, busPhone, address, city, state, zip, latitude, longitude);
             })
