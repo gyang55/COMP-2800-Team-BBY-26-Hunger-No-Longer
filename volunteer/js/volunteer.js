@@ -64,15 +64,23 @@ checkboxes.forEach(function(checkbox) {
         updateProv: prov,
         updateNumber: number,
         availDay: availableDays,
-        date: Date.now()
+        date: Date.now(),
+        UID: user.uid,
     }, {
         merge: true
     })
     .then(function () {
-        window.location.href = "volunteer-confirm.html";
+      
+      //Added a flag to mark an individual as a Volunteer:
+        db.collection('users').doc(user.uid).set({
+          volunteer: true},{
+              merge: true
+              }).then(() => {
+                setTimeout(function(){
+                  window.location.href = "volunteer-confirm.html";}, 3000);
+              })
     });
 }
-
 
 /**
  * Retrieves user input and updates volunteer profile.
@@ -85,14 +93,14 @@ function getInfo() {
         var updateNumber = document.getElementById("number-input").value;
         var availDay = availableDays;
 
-        if (updateAddress, updateCity, updateProv != "") 
-          alert("Thank you for filling it out.")
+        if (updateAddress, updateCity, updateProv != "") {
+          $('#myModalThankYou').modal('show');
+          updateVolunteer(updateAddress, updateCity, updateProv, updateNumber, availDay);
+        }
         else {
-          alert("Don't leave it blank!")
+          $('#myModalBlankForm').modal('show');
         return false;
         }
-
-        updateVolunteer(updateAddress, updateCity, updateProv, updateNumber, availDay);
     });
 }
 getInfo();
@@ -129,4 +137,8 @@ getInfo();
 setInputFilter(document.getElementById("number-input"), function (value) {
   return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
 });
+
+function closeModal() {
+  $('#myModalBlankForm').modal('hide')
+}
 
