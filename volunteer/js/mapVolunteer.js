@@ -84,11 +84,8 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-
-
 var lats;
 var lng;
-
 function showPosition(position) {
     lng = position.coords.longitude;
     lats = position.coords.latitude;
@@ -97,6 +94,26 @@ function showPosition(position) {
 }
 // Listen for click on 'get food for me@ button to show all the restaurants
 function updatePosition() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent("You are here.");
+                infoWindow.open(map);
+                map.setCenter(pos);
+            },
+            () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+            }
+        );
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
     var user = firebase.auth().currentUser;
     getLocation();
     var updatePosition = db.collection("users");

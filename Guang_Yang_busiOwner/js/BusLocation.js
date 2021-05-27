@@ -65,12 +65,12 @@ google.maps.event.addListener(map, "click", (event) => {
     });
 })
 
-let markerArray = [];
+// Show all the registered restaurants on the map
+let markerArray = []; // save each restaurants geolocation as object and pushed into this array
 db.collection('Business')
     .get()
     .then((snap) => {
         snap.forEach(doc => {
-
             console.log(doc.data().longitude + " " + doc.data().latitude);
             let location = {};
             location.lat = doc.data().latitude;
