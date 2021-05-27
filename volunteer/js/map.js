@@ -13,7 +13,7 @@
   });
 });
 var map;
-// taken from stackoverflow credits goes to geocodezip 
+// Taken from stackoverflow credits goes to geocodezip 
 // slightly modified for Vancouver location.
 // need to add an alert as we need to alert Users of location recording*
 // https://stackoverflow.com/questions/28813099/googlemap-how-to-add-and-delete-marker
@@ -48,12 +48,7 @@ function placeMarker(location) {
   });
 }
 
-//google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
-var x = document.getElementById("demo");
+var x = document.getElementById("geo");
 var latitude;
 var longitude;
 function getLocation() {
@@ -64,10 +59,29 @@ function getLocation() {
   }
 }
 
+
+var lats;
+var lng;
 function showPosition(position) {
-  //x.innerHTML = "Latitude: " + position.coords.latitude +
-  //"<br>Longitude: " + position.coords.longitude;
-  console.log(position.coords.latitude );
-  console.log(position.coords.longitude)
+  lng = position.coords.longitude;
+  lats = position.coords.latitude;
+  console.log(lats);
+  console.log(lng);
 }
 // Write to Firebase Latitude & Longitude, 
+
+function updatePosition() {
+  var user = firebase.auth().currentUser;
+  getLocation();
+  var updatePosition = db.collection("users");
+  updatePosition.doc(user.uid).set({
+    latitude: lats,
+    longitude: lng,
+  }, {
+      merge: true
+  })
+  .then(function () {
+              setTimeout(function(){
+                window.location.href = "map.html";}, 5000);
+    })
+  } 

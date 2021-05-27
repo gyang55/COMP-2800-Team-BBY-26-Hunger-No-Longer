@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer</title>
     <link rel="stylesheet" type="text/css" href="/volunteer/css/volunteer.css"/>
-    <link rel="stylesheet" type="text/css" href="css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="css/map.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="icon" href="/favicon/favicon-32x32.png">
@@ -145,17 +145,17 @@
           </div>
       </div>
       </div>
-<div id=mapButtons>    
+<div id=mapButtons>
 <h2>Enter address to checkout food near you!</h2>
-<button type="button" onclick='getLocation()' class="btn btn-primary">Get food for me</button>
-<!--  <a href="#" id="enterSearch"style="padding-left: 5vw;" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >Find Food For ME!</a>
- --><!-- <a href="../individual.html" style="padding-left: 5vw;" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">No</a>
- -->
-
+</div> 
 <!-- Map insert here. -->
 <div id="googleMap" style="width:100%;height:400px;"></div>
 
-<p id="demo"></p>
+<p id="geo"></p>
+
+<div id=foodButton>
+<button type="submit" style="width: 100%;" onclick='updatePosition()' class="btn btn-primary">Get food for me</button>
+</div>
 
 
             <!-- Modal for Revoking Access -->
