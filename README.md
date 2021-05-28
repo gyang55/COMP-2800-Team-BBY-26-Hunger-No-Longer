@@ -24,7 +24,7 @@ Create an empty folder for cloning the github repository.
 5. Include detailed configuration instructions and any additional notes including passwords to servers, etc.
 
 i) Configuring Firebase:
-register a firebase account
+Register a firebase account
 create a project
 In project setting, find SDK setup and configuration. Click on the cdn option, copy the from "// Your web app's Firebase configuration" to the end to a seperate js file. Link that js file to every html.
 While in the SDK setup and configuration window, copy the first two script link to every html file/
@@ -47,9 +47,9 @@ Add specific APIs needed
 Obtain API Key
 Insert API Key to map.js files
 
-6. Include a link to 04b Surprise challenge #2b testing plan you have completed so the new developer can see your testing history and maybe contribute to a minor bug fix!
+iv) This project has a roles based system,
+be sure to create 3 different types of accounts for testing purposes, (Individual, Charity, Businesses);
 
-Surprise challenge  
-https://hunger-no-longer.web.app/login.html?mode=select  
+6. Include a link to 04b Surprise challenge #2b testing plan you have completed so the new developer can see your testing history and maybe contribute to a minor bug fix!
 
 Test Plan https://docs.google.com/spreadsheets/d/1GBQdnOEdDZPdbczsjLOa77sy7CkpjOfjZwKwD6kH6Vw/edit#gid=394496370  
