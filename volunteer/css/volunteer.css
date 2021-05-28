@@ -310,7 +310,7 @@ body {
     margin-top: 15px;
     min-width: 300px; 
     overflow-y:scroll; 
-    height: 1000px;
+    height: 300px;
     border: solid 1px black;
     background-color: gainsboro;
     border-radius: 10px;
@@ -737,6 +737,14 @@ input[type=text]:focus {
     border-radius: 30px;
     border:rgba(0, 0, 0, 0.452) solid;
     font-family: 'Poppins', sans-serif;
+}
+
+#titleSpot::-webkit-scrollbar {
+    display: none;
+}
+
+#textBodySpot::-webkit-scrollbar {
+    display: none;
 }
 
 
