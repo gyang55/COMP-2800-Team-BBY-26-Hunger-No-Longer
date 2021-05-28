@@ -17,6 +17,11 @@
     font-family: 'Poppins', sans-serif;
     
 }
+.name-col,
+.email-col,
+.avail-col{
+    padding: 55% vw;
+}
 #hello {
     padding-left: 20px;
     padding-right: 20px;
